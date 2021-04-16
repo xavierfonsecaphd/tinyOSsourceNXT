@@ -1,0 +1,87 @@
+#
+# FILE: nxtmote/.platform
+# 
+# NXTMOTE platform
+#
+
+GAS = arm-elf-gcc -c # This ensures .c and .s compiled object are compatible
+
+#rup
+GCC      = arm-elf-gcc-4.7 -c
+CFLAGS  += -Wall -g -mcpu=arm7tdmi -I.
+CFLAGS += -Wa,-adhlns=app.lst 
+SIZE	 = arm-elf-size
+
+# Override the default linker script .text section start address
+#LDFLAGS = -Ttext=0x100000
+LDFLAGS = -nostartfiles
+
+OBJCOPY = arm-elf-objcopy
+OBJDUMP = arm-elf-objdump
+NCC = ncc
+LIBS = -lm
+
+FLASHEXE = fwflash.exe
+
+BUILDDIR = build/nxtmote
+MAIN_EXE = $(BUILDDIR)/main.exe
+MAIN_SREC = $(BUILDDIR)/main.srec
+MAIN_IHEX = $(BUILDDIR)/main.ihex
+MAIN_HEX = $(BUILDDIR)/main.hex
+NXTMOTW_RFW = $(BUILDDIR)/nxtmote.rfw #To use LEGO NXT LABVIEW to download
+MAIN_BIN = $(BUILDDIR)/nxtmote.bin
+INSTALL_SREC = $(MAIN_SREC).out$(if $(NODEID),-$(NODEID),)
+VOLUMEFILE = volumes-at45db.xml
+ASSEMBLY_OBJS =  $(BUILDDIR)/Cstartup.o
+C_OBJS =
+#C_OBJS =  $(BUILDDIR)/Cstartup_SAM7.o 
+#C_OBJS += $(BUILDDIR)/c_output.o $(BUILDDIR)/d_output.o $(BUILDDIR)/c_ioctrl.o $(BUILDDIR)/d_ioctrl.o
+PFLAGS += -Wall -Wshadow -DDEF_TOS_AM_GROUP=$(DEFAULT_LOCAL_GROUP) $(NESC_FLAGS)
+PFLAGS += -fnesc-cfile=$(BUILDDIR)/app.c
+#PFLAGS += -save-temps
+ifdef MSG_SIZE
+PFLAGS += -DTOSH_DATA_LENGTH=$(MSG_SIZE)
+endif
+
+PFLAGS += -I%T/platforms/nxtmote
+PFLAGS += -I%T/chips/at91
+PFLAGS += -I%T/chips/at91/i2c
+PFLAGS += -I%T/chips/at91/spi
+PFLAGS += -I%T/chips/at91/gpio
+PFLAGS += -I%T/chips/at91/timer
+PFLAGS += -I%T/chips/bc4
+PFLAGS += -I%T/chips/uc1601
+PFLAGS += -I%T/chips/sensor
+PFLAGS += -I%T/chips/motor
+PFLAGS += -I%T/lib/serial
+PFLAGS += -I%T/lib/timer
+
+PFLAGS += -mcpu=arm7tdmi
+PFLAGS += -gcc=arm-elf-gcc-4.7
+PFLAGS += -fnesc-target=env
+PFLAGS += -fnesc-no-debug
+PFLAGS += -nostartfiles
+PFLAGS += -fnesc-no-debug
+PFLAGS += -fnesc-scheduler=TinySchedulerC,TinySchedulerC.TaskBasic,TaskBasic,TaskBasic,runTask,postTask
+
+export NESC_MACHINE = structure_size_boundary=32, pointer=4,4 float=4,4 double=8,4 long_double=8,4 short=2,2 int=4,4 long=4,4 long_long=8,4 int1248_align=1,2,4,4 wchar_size_size=4,4 char_wchar_signed=false,true
+
+
+TOSMAKE_FLASH_CHIP = at91
+
+
+
+#@opts = qw(
+#
+#  -gcc=arm-elf-gcc
+#  -fnesc-no-debug
+#  -nostartfiles
+#  -fnesc-target=env
+#  -fnesc-scheduler=TinySchedulerC,TinySchedulerC.TaskBasic,TaskBasic,TaskBasic,runTask,postTask
+#
+#);
+
+
+#$ENV{NESC_MACHINE} = "pointer=4,4 float=4,4 double=8,4 long_double=8,4 short=2,2 int=4,4 long=4,4 long_long=8,4 int1248_align=1,2,4,4 wchar_size_size=4,4 char_wchar_signed=false,true";
+
+#$ENV{NESC_MACHINE} = "";

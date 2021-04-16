@@ -1,0 +1,8 @@
+<metrics>
+  <ram>12</ram>
+  <z1-ram>12</z1-ram>
+  <flash>9421</flash>
+  <z1-flash>9421</z1-flash>
+  <stack>332</stack>
+  <z1-stack>332</z1-stack>
+</metrics>

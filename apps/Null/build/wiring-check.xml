@@ -1,0 +1,830 @@
+<nesc xmlns="http://www.tinyos.net/nesC">
+  <wiring>
+    <wire loc="57:NullAppC.nc">
+      <from><interface-ref name="Boot" scoped="" ref="0x10465e670"/></from>
+      <to><interface-ref name="Boot" scoped="" ref="0x1045fe850"/></to>
+    </wire>
+    <wire loc="72:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/system/MainC.nc">
+      <from><interface-ref name="Boot" scoped="" ref="0x1045fe850"/></from>
+      <to><interface-ref name="Boot" scoped="" ref="0x1045fc7c0"/></to>
+    </wire>
+    <wire loc="67:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/system/MainC.nc">
+      <from><interface-ref name="Scheduler" scoped="" ref="0x1045fcdf8"/></from>
+      <to><interface-ref name="Scheduler" scoped="" ref="0x104111020"/></to>
+    </wire>
+    <wire loc="53:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/system/TinySchedulerC.nc">
+      <from><interface-ref name="Scheduler" scoped="" ref="0x104111020"/></from>
+      <to><interface-ref name="Scheduler" scoped="" ref="0x1045c6378"/></to>
+    </wire>
+    <wire loc="68:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/system/MainC.nc">
+      <from><interface-ref name="PlatformInit" scoped="" ref="0x1046697f8"/></from>
+      <to><interface-ref name="Init" scoped="" ref="0x1045e1a20"/></to>
+    </wire>
+    <wire loc="38:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/platforms/nxtmote/PlatformC.nc">
+      <from><interface-ref name="Init" scoped="" ref="0x1045e1a20"/></from>
+      <to><interface-ref name="Init" scoped="" ref="0x1045fa960"/></to>
+    </wire>
+    <wire loc="71:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/system/MainC.nc">
+      <from><interface-ref name="SoftwareInit" scoped="" ref="0x104668020"/></from>
+      <to><interface-ref name="SoftwareInit" scoped="" ref="0x1045e2c68"/></to>
+    </wire>
+    <wire loc="42:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/platforms/nxtmote/PlatformC.nc">
+      <from><interface-ref name="InitL2" scoped="" ref="0x1045f7cf0"/></from>
+      <to><interface-ref name="Init" scoped="" ref="0x104616388"/></to>
+    </wire>
+    <wire loc="22:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/timer/HplAT91PitC.nc">
+      <from><interface-ref name="Init" scoped="" ref="0x104616388"/></from>
+      <to><interface-ref name="Init" scoped="" ref="0x104644020"/></to>
+    </wire>
+    <wire loc="24:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/timer/HplAT91PitC.nc">
+      <from><interface-ref name="HplAT91Pit" scoped="" ref="0x104646720"/></from>
+      <to><interface-ref name="HplAT91Pit" scoped="" ref="0x104644620"/></to>
+    </wire>
+    <wire loc="26:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/timer/HplAT91PitC.nc">
+      <from><interface-ref name="SysIrq" scoped="" ref="0x104643720"/></from>
+      <to><interface-ref name="AT91Irq" scoped="" ref="0x104615020"/>
+      <arguments>
+        <value cst="I:1">
+          <type-int cname="unsigned int" unsigned="" size="I:4" alignment="I:4"></type-int>
+        </value>
+      </arguments>
+      </to>
+    </wire>
+    <wire loc="21:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/timer/HplAT91PitM.nc">
+      <from><interface-ref name="fireFromTask" scoped="" ref="0x104641020"/></from>
+      <to><interface-ref name="TaskBasic" scoped="" ref="0x1041e9b18"/>
+      <arguments>
+        <value cst="I:0">
+          <type-int cname="int" size="I:4" alignment="I:4"></type-int>
+        </value>
+      </arguments>
+      </to>
+    </wire>
+    <wire loc="54:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/system/TinySchedulerC.nc">
+      <from><interface-ref name="TaskBasic" scoped="" ref="0x1041e9b18"/></from>
+      <to><interface-ref name="TaskBasic" scoped="" ref="0x1045c5208"/></to>
+    </wire>
+    <wire loc="55:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/system/TinySchedulerC.nc">
+      <from><interface-ref name="McuSleep" scoped="" ref="0x1045c26e8"/></from>
+      <to><interface-ref name="McuSleep" scoped="" ref="0x10426d190"/></to>
+    </wire>
+  </wiring>
+  <components>
+    <component qname="MainC" loc="56:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/system/MainC.nc">
+      <documentation loc="1:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/platforms/nxtmote/hardware.h">
+        <short>&#10; Adapted for nxtmote.</short>
+        <long>&#10; Adapted for nxtmote.&#10; @author Rasmus Pedersen&#10;</long>
+      </documentation>
+      <configuration/>
+    </component>
+    <component qname="PlatformC" loc="32:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/platforms/nxtmote/PlatformC.nc">
+      <configuration/>
+    </component>
+    <component qname="PlatformP" loc="39:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/platforms/nxtmote/PlatformP.nc">
+      <documentation loc="1:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/platforms/nxtmote/hardware.h">
+        <short>&#10; Adapted for nxtmote.</short>
+        <long>&#10; Adapted for nxtmote.&#10; @author Rasmus Pedersen&#10;</long>
+      </documentation>
+      <module/>
+    </component>
+    <component qname="HplAT91InterruptM" loc="6:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/HplAT91InterruptM.nc">
+      <documentation loc="1:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/platforms/nxtmote/hardware.h">
+        <short>&#10; Adapted for nxtmote.</short>
+        <long>&#10; Adapted for nxtmote.&#10; @author Rasmus Pedersen&#10;</long>
+      </documentation>
+      <module/>
+    </component>
+    <component qname="HplAT91PitC" loc="6:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/timer/HplAT91PitC.nc">
+      <documentation loc="1:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/timer/HplAT91PitC.nc">
+        <short>&#10; Periodic Interval Timer.</short>
+        <long>&#10; Periodic Interval Timer. &#10; Adapted for nxtmote.&#10; @author Rasmus Ulslev Pedersen&#10;</long>
+      </documentation>
+      <configuration/>
+    </component>
+    <component qname="HplAT91PitM" loc="7:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/timer/HplAT91PitM.nc">
+      <documentation loc="1:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/platforms/nxtmote/hardware.h">
+        <short>&#10; Adapted for nxtmote.</short>
+        <long>&#10; Adapted for nxtmote.&#10; @author Rasmus Pedersen&#10;</long>
+      </documentation>
+      <module/>
+    </component>
+    <component qname="RealMainP" loc="56:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/system/RealMainP.nc" safe="">
+      <documentation loc="49:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/system/RealMainP.nc">
+        <short>&#10; RealMain implements the TinyOS boot sequence, as documented in TEP 107.</short>
+        <long>&#10; RealMain implements the TinyOS boot sequence, as documented in TEP 107.&#10;&#10; @author Philip Levis&#10; @date   January 17 2005&#10;</long>
+      </documentation>
+      <module/>
+    </component>
+    <component qname="TinySchedulerC" loc="46:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/system/TinySchedulerC.nc">
+      <documentation loc="34:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/system/TinySchedulerC.nc">
+        <short>&#10; The TinyOS scheduler.</short>
+        <long>&#10; The TinyOS scheduler. It provides two interfaces: Scheduler,&#10; for TinyOS to initialize and run tasks, and TaskBasic, the simplext&#10; class of TinyOS tasks (reserved always at-most-once posting,&#10; FIFO, parameter-free). For details and information on how to&#10; replace the scheduler, refer to TEP 106.&#10;&#10; @author  Phil Levis&#10; @date    August 7 2005&#10; @see     TEP 106: Tasks and Schedulers&#10;</long>
+      </documentation>
+      <configuration/>
+    </component>
+    <component qname="SchedulerBasicP" loc="54:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/system/SchedulerBasicP.nc" safe="">
+      <module/>
+    </component>
+    <component qname="McuSleepC" loc="15:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/platforms/nxtmote/McuSleepC.nc">
+      <documentation loc="11:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/platforms/nxtmote/McuSleepC.nc">
+        <short>&#10; Dummy implementation to support the null platform.</short>
+        <long>&#10; Dummy implementation to support the null platform.&#10;</long>
+      </documentation>
+      <module/>
+    </component>
+    <component qname="NullC" loc="52:NullC.nc" safe="">
+      <documentation loc="42:NullC.nc">
+        <short>&#10; Null is an empty skeleton application.</short>
+        <long>&#10; Null is an empty skeleton application.  It is useful to test that the&#10; build environment is functional in its most minimal sense, i.e., you&#10; can correctly compile an application. It is also useful to test the&#10; minimum power consumption of a node when it has absolutely no &#10; interrupts or resources active.&#10;&#10; @author Cory Sharp &#60;cssharp@eecs.berkeley.edu>&#10; @date February 4, 2006&#10;</long>
+      </documentation>
+      <module/>
+    </component>
+  </components>
+  <interfaces>
+    <interface provided="0" name="SoftwareInit" ref="0x1045e2c68" loc="58:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/system/MainC.nc">
+      <component-ref qname="MainC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="SoftwareInit" scoped="" ref="0x1045e2c68"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x1045e1020"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="Boot" ref="0x1045fe850" loc="57:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/system/MainC.nc">
+      <component-ref qname="MainC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="Boot" scoped="" ref="0x1045fe850"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Boot"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="booted" scoped="" ref="0x1045feba0"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="Init" ref="0x1045e1a20" loc="33:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/platforms/nxtmote/PlatformC.nc">
+      <component-ref qname="PlatformC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="Init" scoped="" ref="0x1045e1a20"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x1045e1d70"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="InitL2" ref="0x1045f7cf0" loc="44:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/platforms/nxtmote/PlatformP.nc">
+      <component-ref qname="PlatformP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="InitL2" scoped="" ref="0x1045f7cf0"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x1045f60a0"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="Init" ref="0x1045fa960" loc="40:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/platforms/nxtmote/PlatformP.nc">
+      <component-ref qname="PlatformP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="Init" scoped="" ref="0x1045fa960"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x1045facb0"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="InitL0" ref="0x1045f7060" loc="42:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/platforms/nxtmote/PlatformP.nc">
+      <component-ref qname="PlatformP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="InitL0" scoped="" ref="0x1045f7060"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x1045f73b0"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="InitL3" ref="0x1045f6398" loc="45:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/platforms/nxtmote/PlatformP.nc">
+      <component-ref qname="PlatformP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="InitL3" scoped="" ref="0x1045f6398"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x1045f66e8"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="PInit" ref="0x1045f69d8" loc="46:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/platforms/nxtmote/PlatformP.nc">
+      <component-ref qname="PlatformP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="PInit" scoped="" ref="0x1045f69d8"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x1045f6d28"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="InitL1" ref="0x1045f76a8" loc="43:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/platforms/nxtmote/PlatformP.nc">
+      <component-ref qname="PlatformP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="InitL1" scoped="" ref="0x1045f76a8"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x1045f79f8"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="AT91Fiq" ref="0x1046111c8" loc="11:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/HplAT91InterruptM.nc">
+      <component-ref qname="HplAT91InterruptM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="AT91Fiq" scoped="" ref="0x1046111c8"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HplAT91Interrupt"/>
+      </instance>
+      <interface-parameters>
+        <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+          <typename><typedef-ref name="uint8_t" ref="0x103e98bf0"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="fired" scoped="" ref="0x104611518"/>
+        <function-ref name="disable" scoped="" ref="0x1046116a0"/>
+        <function-ref name="enable" scoped="" ref="0x104611828"/>
+        <function-ref name="allocate" scoped="" ref="0x1046119b0"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="AT91Irq" ref="0x104615020" loc="10:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/HplAT91InterruptM.nc">
+      <component-ref qname="HplAT91InterruptM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="AT91Irq" scoped="" ref="0x104615020"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HplAT91Interrupt"/>
+      </instance>
+      <interface-parameters>
+        <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+          <typename><typedef-ref name="uint8_t" ref="0x103e98bf0"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="fired" scoped="" ref="0x104615370"/>
+        <function-ref name="disable" scoped="" ref="0x1046154f8"/>
+        <function-ref name="enable" scoped="" ref="0x104615680"/>
+        <function-ref name="allocate" scoped="" ref="0x104615808"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="Init" ref="0x104616388" loc="9:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/timer/HplAT91PitC.nc">
+      <component-ref qname="HplAT91PitC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="Init" scoped="" ref="0x104616388"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x1046166d8"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="HplAT91Pit" ref="0x104646720" loc="10:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/timer/HplAT91PitC.nc">
+      <component-ref qname="HplAT91PitC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="HplAT91Pit" scoped="" ref="0x104646720"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HplAT91Pit"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="fired" scoped="" ref="0x104646a70"/>
+        <function-ref name="getPITMR" scoped="" ref="0x104646bf8"/>
+        <function-ref name="setPITMR" scoped="" ref="0x104646d80"/>
+        <function-ref name="getPITPIVR" scoped="" ref="0x10464c020"/>
+        <function-ref name="firedTask" scoped="" ref="0x10464c1a8"/>
+        <function-ref name="getPITPIIR" scoped="" ref="0x10464c330"/>
+        <function-ref name="getPITSR" scoped="" ref="0x10464c4b8"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="Init" ref="0x104644020" loc="9:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/timer/HplAT91PitM.nc">
+      <component-ref qname="HplAT91PitM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="Init" scoped="" ref="0x104644020"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x104644370"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="fireFromTask" ref="0x104641020" loc="21:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/timer/HplAT91PitM.nc">
+      <component-ref qname="HplAT91PitM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="fireFromTask" scoped="" ref="0x104641020"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="TaskBasic"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="postTask" scoped="" ref="0x104641370"/>
+        <function-ref name="runTask" scoped="" ref="0x1046414f8"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="SysIrq" ref="0x104643720" loc="13:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/timer/HplAT91PitM.nc">
+      <component-ref qname="HplAT91PitM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="SysIrq" scoped="" ref="0x104643720"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HplAT91Interrupt"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="fired" scoped="" ref="0x104643a70"/>
+        <function-ref name="disable" scoped="" ref="0x104643bf8"/>
+        <function-ref name="enable" scoped="" ref="0x104643d80"/>
+        <function-ref name="allocate" scoped="" ref="0x104642020"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="HplAT91Pit" ref="0x104644620" loc="10:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/timer/HplAT91PitM.nc">
+      <component-ref qname="HplAT91PitM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="HplAT91Pit" scoped="" ref="0x104644620"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HplAT91Pit"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="fired" scoped="" ref="0x104644970"/>
+        <function-ref name="getPITMR" scoped="" ref="0x104644af8"/>
+        <function-ref name="setPITMR" scoped="" ref="0x104644c80"/>
+        <function-ref name="getPITPIVR" scoped="" ref="0x104644e08"/>
+        <function-ref name="firedTask" scoped="" ref="0x104643020"/>
+        <function-ref name="getPITPIIR" scoped="" ref="0x1046431a8"/>
+        <function-ref name="getPITSR" scoped="" ref="0x104643330"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="SoftwareInit" ref="0x104668020" loc="60:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/system/RealMainP.nc">
+      <component-ref qname="RealMainP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="SoftwareInit" scoped="" ref="0x104668020"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x104668370"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="Boot" ref="0x1045fc7c0" loc="57:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/system/RealMainP.nc">
+      <component-ref qname="RealMainP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="Boot" scoped="" ref="0x1045fc7c0"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Boot"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="booted" scoped="" ref="0x1045fcb10"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="PlatformInit" ref="0x1046697f8" loc="59:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/system/RealMainP.nc">
+      <component-ref qname="RealMainP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="PlatformInit" scoped="" ref="0x1046697f8"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x104669b48"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="Scheduler" ref="0x1045fcdf8" loc="58:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/system/RealMainP.nc">
+      <component-ref qname="RealMainP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="Scheduler" scoped="" ref="0x1045fcdf8"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Scheduler"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x104669170"/>
+        <function-ref name="taskLoop" scoped="" ref="0x1046692f8"/>
+        <function-ref name="runNextTask" scoped="" ref="0x104669480"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="TaskBasic" ref="0x1041e9b18" loc="48:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/system/TinySchedulerC.nc">
+      <component-ref qname="TinySchedulerC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="TaskBasic" scoped="" ref="0x1041e9b18"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="TaskBasic"/>
+      </instance>
+      <interface-parameters>
+        <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+          <typename><typedef-ref name="uint8_t" ref="0x103e98bf0"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="postTask" scoped="" ref="0x1041e9e68"/>
+        <function-ref name="runTask" scoped="" ref="0x104194020"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="Scheduler" ref="0x104111020" loc="47:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/system/TinySchedulerC.nc">
+      <component-ref qname="TinySchedulerC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="Scheduler" scoped="" ref="0x104111020"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Scheduler"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x104111370"/>
+        <function-ref name="taskLoop" scoped="" ref="0x1041114f8"/>
+        <function-ref name="runNextTask" scoped="" ref="0x104111680"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="TaskBasic" ref="0x1045c5208" loc="56:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/system/SchedulerBasicP.nc">
+      <component-ref qname="SchedulerBasicP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="TaskBasic" scoped="" ref="0x1045c5208"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="TaskBasic"/>
+      </instance>
+      <interface-parameters>
+        <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+          <typename><typedef-ref name="uint8_t" ref="0x103e98bf0"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="postTask" scoped="" ref="0x1045c5558"/>
+        <function-ref name="runTask" scoped="" ref="0x1045c56e0"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="McuSleep" ref="0x1045c26e8" loc="57:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/system/SchedulerBasicP.nc">
+      <component-ref qname="SchedulerBasicP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="McuSleep" scoped="" ref="0x1045c26e8"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="McuSleep"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="sleep" scoped="" ref="0x1045c2a38"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="Scheduler" ref="0x1045c6378" loc="55:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/system/SchedulerBasicP.nc">
+      <component-ref qname="SchedulerBasicP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="Scheduler" scoped="" ref="0x1045c6378"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Scheduler"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x1045c66c8"/>
+        <function-ref name="taskLoop" scoped="" ref="0x1045c6850"/>
+        <function-ref name="runNextTask" scoped="" ref="0x1045c69d8"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="McuSleep" ref="0x10426d190" loc="17:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/platforms/nxtmote/McuSleepC.nc">
+      <component-ref qname="McuSleepC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="McuSleep" scoped="" ref="0x10426d190"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="McuSleep"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="sleep" scoped="" ref="0x10426d4e0"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="McuPowerState" ref="0x1045e7600" loc="18:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/platforms/nxtmote/McuSleepC.nc">
+      <component-ref qname="McuSleepC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="McuPowerState" scoped="" ref="0x1045e7600"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="McuPowerState"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="update" scoped="" ref="0x1045e7950"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="Boot" ref="0x10465e670" loc="54:NullC.nc">
+      <component-ref qname="NullC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="Boot" scoped="" ref="0x10465e670"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Boot"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="booted" scoped="" ref="0x10465e9c0"/>
+      </interface-functions>
+    </interface>
+  </interfaces>
+  <interfacedefs>
+    <interfacedef qname="Init" loc="51:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/interfaces/Init.nc">
+      <documentation loc="34:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/types/TinyError.h">
+        <short>&#10; </short>
+        <long>&#10; @author Phil Levis&#10; @author David Gay&#10; Revision:  $Revision: 1.12 $&#10;&#10; Defines global error codes for error_t in TinyOS.&#10;</long>
+      </documentation>
+      <function command="" provided="0" name="init" ref="0x1045e27c0" loc="62:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/interfaces/Init.nc">
+        <documentation loc="53:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/interfaces/Init.nc">
+          <short>&#10; Initialize this component.</short>
+          <long>&#10; Initialize this component. Initialization should not assume that&#10; any component is running: init() cannot call any commands besides&#10; those that initialize other components.  &#10; &#10; @return SUCCESS if initialized properly, FAIL otherwise.&#10; @see TEP 107: Boot Sequence&#10;&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="Init"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+            <typename><typedef-ref name="error_t" ref="0x1041e05d8"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+    </interfacedef>
+    <interfacedef qname="Boot" loc="50:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/interfaces/Boot.nc">
+      <documentation loc="42:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/interfaces/Boot.nc">
+        <short>&#10; Interface that notifies components when TinyOS has booted&#10; (initialized all of its components), as discussed in TEP 107.</short>
+        <long>&#10; Interface that notifies components when TinyOS has booted&#10; (initialized all of its components), as discussed in TEP 107.&#10;&#10; @author Philip Levis&#10; @date   January 5 2005&#10;</long>
+      </documentation>
+      <function event="" provided="0" name="booted" ref="0x1045fe490" loc="60:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/interfaces/Boot.nc">
+        <documentation loc="51:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/interfaces/Boot.nc">
+          <short>&#10; Signaled when the system has booted successfully.</short>
+          <long>&#10; Signaled when the system has booted successfully. Components can&#10; assume the system has been initialized properly. Services may&#10; need to be started to work, however.&#10;&#10; @see StdControl&#10; @see SplitConrol&#10; @see TEP 107: Boot Sequence&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="Boot"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+    </interfacedef>
+    <interfacedef qname="HplAT91Interrupt" loc="9:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/HplAT91Interrupt.nc">
+      <documentation loc="5:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/HplAT91Interrupt.nc">
+        <short>&#10; at91 interrupt mapping&#10;</short>
+      </documentation>
+      <function event="" provided="0" name="fired" ref="0x104612718" loc="29:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/HplAT91Interrupt.nc">
+        <documentation loc="26:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/HplAT91Interrupt.nc">
+          <short>&#10; The peripheral interrupt event.</short>
+          <long>&#10; The peripheral interrupt event.&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="HplAT91Interrupt"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="disable" ref="0x104612020" loc="24:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/HplAT91Interrupt.nc">
+        <documentation loc="21:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/HplAT91Interrupt.nc">
+          <short>&#10; Disables a peripheral interrupt.</short>
+          <long>&#10; Disables a peripheral interrupt.&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="HplAT91Interrupt"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="enable" ref="0x104613848" loc="19:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/HplAT91Interrupt.nc">
+        <documentation loc="16:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/HplAT91Interrupt.nc">
+          <short>&#10; Enables a periperhal interrupt.</short>
+          <long>&#10; Enables a periperhal interrupt.&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="HplAT91Interrupt"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="allocate" ref="0x104613178" loc="14:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/HplAT91Interrupt.nc">
+        <documentation loc="11:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/HplAT91Interrupt.nc">
+          <short> &#10; Allocates interrupts&#10;</short>
+        </documentation>
+        <interfacedef-ref qname="HplAT91Interrupt"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+            <typename><typedef-ref name="error_t" ref="0x1041e05d8"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+    </interfacedef>
+    <interfacedef qname="HplAT91Pit" loc="6:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/timer/HplAT91Pit.nc">
+      <documentation loc="1:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/timer/HplAT91Pit.nc">
+        <short>&#10; Periodic Interval Timer Interface.</short>
+        <long>&#10; Periodic Interval Timer Interface.&#10; @author Rasmus Pedersen&#10;</long>
+      </documentation>
+      <function event="" provided="0" name="fired" ref="0x104648880" loc="22:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/timer/HplAT91Pit.nc">
+        <documentation loc="18:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/timer/HplAT91Pit.nc">
+          <short>&#10; Fired.</short>
+          <long>&#10; Fired. The event handler must call getPITSR() in this interface.&#10; It will clear the status register.&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="HplAT91Pit"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="getPITMR" ref="0x10464a328" loc="8:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/timer/HplAT91Pit.nc">
+        <interfacedef-ref qname="HplAT91Pit"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+            <typename><typedef-ref name="uint32_t" ref="0x103e9ab18"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="setPITMR" ref="0x10464ac20" loc="10:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/timer/HplAT91Pit.nc">
+        <interfacedef-ref qname="HplAT91Pit"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x103e9ab18"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="val" ref="0x10464a9b0" loc="10:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/timer/HplAT91Pit.nc">
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x103e9ab18"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="getPITPIVR" ref="0x104649a70" loc="14:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/timer/HplAT91Pit.nc">
+        <interfacedef-ref qname="HplAT91Pit"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+            <typename><typedef-ref name="uint32_t" ref="0x103e9ab18"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function event="" provided="0" name="firedTask" ref="0x104646290" loc="32:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/timer/HplAT91Pit.nc">
+        <documentation loc="24:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/timer/HplAT91Pit.nc">
+          <short> &#10; Same as fired, but signalled from a task (posted by the fired event().</short>
+          <long> &#10; Same as fired, but signalled from a task (posted by the fired event().&#10; If this event is used then it is not necessary to post a task in the signalled&#10; component to get sync code.&#10; @param taskMiss   how many times fired failed to post the task that signals&#10;                   firedTask(). Would mean that &#34;something&#34; is taking longer&#10;                   than 1 ms somewhere in the system without giving up control.&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="HplAT91Pit"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x103e9ab18"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="taskMiss" ref="0x104646020" loc="32:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/timer/HplAT91Pit.nc">
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x103e9ab18"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="getPITPIIR" ref="0x1046481d8" loc="16:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/timer/HplAT91Pit.nc">
+        <interfacedef-ref qname="HplAT91Pit"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+            <typename><typedef-ref name="uint32_t" ref="0x103e9ab18"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="getPITSR" ref="0x104649360" loc="12:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/chips/at91/timer/HplAT91Pit.nc">
+        <interfacedef-ref qname="HplAT91Pit"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+            <typename><typedef-ref name="uint32_t" ref="0x103e9ab18"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+    </interfacedef>
+    <interfacedef qname="TaskBasic" loc="55:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/interfaces/TaskBasic.nc">
+      <function command="" provided="0" name="postTask" ref="0x1041eba38" loc="67:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/interfaces/TaskBasic.nc">
+        <documentation loc="57:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/interfaces/TaskBasic.nc">
+          <short>&#10; Post this task to the TinyOS scheduler.</short>
+          <long>&#10; Post this task to the TinyOS scheduler. At some later time,&#10; depending on the scheduling policy, the scheduler will signal the&#10; &#60;tt>run()&#60;/tt> event. &#10;&#10; @return SUCCESS if task was successfuly&#10; posted; the semantics of a non-SUCCESS return value depend on the&#10; implementation of this interface (the class of task).&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="TaskBasic"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+            <typename><typedef-ref name="error_t" ref="0x1041e05d8"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function event="" provided="0" name="runTask" ref="0x1041e9258" loc="75:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/interfaces/TaskBasic.nc">
+        <documentation loc="69:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/interfaces/TaskBasic.nc">
+          <short>&#10; Event from the scheduler to run this task.</short>
+          <long>&#10; Event from the scheduler to run this task. Following the TinyOS&#10; concurrency model, the codes invoked from &#60;tt>run()&#60;/tt> signals&#10; execute atomically with respect to one another, but can be&#10; preempted by async commands/events.&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="TaskBasic"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+    </interfacedef>
+    <interfacedef qname="Scheduler" loc="52:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/interfaces/Scheduler.nc">
+      <documentation loc="42:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/interfaces/Scheduler.nc">
+        <short> &#10; The interface to a TinyOS task scheduler.</short>
+        <long> &#10; The interface to a TinyOS task scheduler.&#10;&#10; @author Philip Levis&#10; @date   January 19 2005&#10; @see TEP 106: Tasks and Schedulers&#10; @see TEP 107: Boot Sequence&#10;</long>
+      </documentation>
+      <function command="" provided="0" name="init" ref="0x103e89d98" loc="57:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/interfaces/Scheduler.nc">
+        <documentation loc="54:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/interfaces/Scheduler.nc">
+          <short> &#10; Initialize the scheduler.</short>
+        </documentation>
+        <interfacedef-ref qname="Scheduler"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="taskLoop" ref="0x1041d8c58" loc="72:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/interfaces/Scheduler.nc">
+        <documentation loc="67:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/interfaces/Scheduler.nc">
+          <short>&#10; Enter an infinite task-running loop.</short>
+          <long>&#10; Enter an infinite task-running loop. Put the MCU into a low power&#10; state when the processor is idle (task queue empty, waiting for&#10; interrupts). This call never returns.&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="Scheduler"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="runNextTask" ref="0x1041d84b8" loc="65:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/interfaces/Scheduler.nc">
+        <documentation loc="59:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/interfaces/Scheduler.nc">
+          <short> &#10; Run the next task if one is waiting, otherwise return immediately.</short>
+          <long> &#10; Run the next task if one is waiting, otherwise return immediately. &#10;&#10; @return        whether a task was run -- TRUE indicates a task&#10;                ran, FALSE indicates there was no task to run.&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="Scheduler"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+            <typename><typedef-ref name="bool" ref="0x1041dbc70"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+    </interfacedef>
+    <interfacedef qname="McuSleep" loc="74:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/interfaces/McuSleep.nc">
+      <documentation loc="63:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/interfaces/McuSleep.nc">
+        <short>&#10; Interface to instruct the MCU to enter a low power state.</short>
+        <long>&#10; Interface to instruct the MCU to enter a low power state. TEP112&#10; describes how an MCU computes this state and how the Scheduler uses&#10; this interface to manage system power draw.&#10; &#10; @author Philip Levis&#10; @author Martin Turon &#60;mturon@xbow.com>&#10; @date   Oct 26, 2005&#10;&#10;</long>
+      </documentation>
+      <function command="" provided="0" name="sleep" ref="0x1045c23e0" loc="76:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/interfaces/McuSleep.nc">
+        <documentation loc="75:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/interfaces/McuSleep.nc">
+          <short> Called by the scheduler to put the MCU to sleep.</short>
+          <long> Called by the scheduler to put the MCU to sleep. *</long>
+        </documentation>
+        <interfacedef-ref qname="McuSleep"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+    </interfacedef>
+    <interfacedef qname="McuPowerState" loc="46:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/interfaces/McuPowerState.nc">
+      <documentation loc="35:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/interfaces/McuPowerState.nc">
+        <short>&#10; Interface to instruct TinyOS that the low-power state of the MCU&#10; may have changed.</short>
+        <long>&#10; Interface to instruct TinyOS that the low-power state of the MCU&#10; may have changed. TEP 112 describes how an MCU computes this state&#10; and how the Scheduler uses this interface to manage system power&#10; draw.&#10; &#10; @author Philip Levis&#10; @date   Oct 26, 2005&#10; @see    TEP 112: Microcontroller Power Management&#10;</long>
+      </documentation>
+      <function command="" provided="0" name="update" ref="0x1045e7258" loc="52:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/interfaces/McuPowerState.nc">
+        <documentation loc="47:/Users/Xavier/Documents/tinyOS/trunk/tinyOSsourceNXT/tos/interfaces/McuPowerState.nc">
+          <short> &#10; Called by any component to tell TinyOS that the MCU low&#10; power state may have changed.</short>
+          <long> &#10; Called by any component to tell TinyOS that the MCU low&#10; power state may have changed. Generally, this should be&#10; called whenever a peripheral/timer is started/stopped. &#10;</long>
+        </documentation>
+        <interfacedef-ref qname="McuPowerState"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+    </interfacedef>
+  </interfacedefs>
+  <tags>
+  </tags>
+  <variables>
+  </variables>
+  <constants>
+  </constants>
+  <functions>
+  </functions>
+  <typedefs>
+  </typedefs>
+</nesc>

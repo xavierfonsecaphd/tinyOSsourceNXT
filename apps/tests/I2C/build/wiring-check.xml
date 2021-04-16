@@ -1,0 +1,2839 @@
+<nesc xmlns="http://www.tinyos.net/nesC">
+  <wiring>
+    <wire loc="42:TestI2CC.nc">
+      <from><interface-ref name="I2CPacket" scoped="" ref="0x107f46608"/></from>
+      <to><interface-ref name="I2CPacket" scoped="" ref="0x107f87020"/></to>
+    </wire>
+    <wire loc="57:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HalAT91I2CMasterC.nc">
+      <from><interface-ref name="I2CPacket" scoped="" ref="0x107f87020"/></from>
+      <to><interface-ref name="I2CPacket" scoped="" ref="0x107f9d498"/></to>
+    </wire>
+    <wire loc="48:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HplUC1601LCDC.nc">
+      <from><interface-ref name="InitL2" scoped="" ref="0x107d81cb0"/></from>
+      <to><interface-ref name="Init" scoped="" ref="0x1080588f8"/></to>
+    </wire>
+    <wire loc="42:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/platforms/nxtmote/PlatformC.nc">
+      <from><interface-ref name="InitL2" scoped="" ref="0x107d81cb0"/></from>
+      <to><interface-ref name="Init" scoped="" ref="0x107da0380"/></to>
+    </wire>
+    <wire loc="45:TestI2CC.nc">
+      <from><interface-ref name="InitL2" scoped="" ref="0x107d81cb0"/></from>
+      <to><interface-ref name="Init" scoped="" ref="0x107f2e348"/></to>
+    </wire>
+    <wire loc="46:TestI2CC.nc">
+      <from><interface-ref name="Boot" scoped="" ref="0x107f44080"/></from>
+      <to><interface-ref name="Boot" scoped="" ref="0x107d886e8"/></to>
+    </wire>
+    <wire loc="72:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/system/MainC.nc">
+      <from><interface-ref name="Boot" scoped="" ref="0x107d886e8"/></from>
+      <to><interface-ref name="Boot" scoped="" ref="0x107d867c0"/></to>
+    </wire>
+    <wire loc="48:TestI2CC.nc">
+      <from><interface-ref name="SubInit" scoped="" ref="0x107f42020"/></from>
+      <to><interface-ref name="Init" scoped="" ref="0x107f7ac40"/></to>
+    </wire>
+    <wire loc="51:TestI2CC.nc">
+      <from><interface-ref name="HalLCD" scoped="" ref="0x107f656e0"/></from>
+      <to><interface-ref name="HalLCD" scoped="" ref="0x10804f020"/></to>
+    </wire>
+    <wire loc="45:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HalLCDC.nc">
+      <from><interface-ref name="HalLCD" scoped="" ref="0x10804f020"/></from>
+      <to><interface-ref name="HalLCD" scoped="" ref="0x10804c238"/></to>
+    </wire>
+    <wire loc="54:TestI2CC.nc">
+      <from><interface-ref name="PitTimer" scoped="" ref="0x107f44718"/></from>
+      <to><interface-ref name="HplAT91Pit" scoped="" ref="0x107dd0720"/></to>
+    </wire>
+    <wire loc="24:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/timer/HplAT91PitC.nc">
+      <from><interface-ref name="HplAT91Pit" scoped="" ref="0x107dd0720"/></from>
+      <to><interface-ref name="HplAT91Pit" scoped="" ref="0x107dce620"/></to>
+    </wire>
+    <wire loc="57:TestI2CC.nc">
+      <from><interface-ref name="I2CSCL" scoped="" ref="0x107f7b5e0"/></from>
+      <to><interface-ref name="HplAT91_GPIOPin" scoped="" ref="0x1080fb1c8"/>
+      <arguments>
+        <value cst="I:16">
+          <type-int cname="unsigned int" unsigned="" size="I:4" alignment="I:4"></type-int>
+        </value>
+      </arguments>
+      </to>
+    </wire>
+    <wire loc="58:TestI2CC.nc">
+      <from><interface-ref name="I2CSDA" scoped="" ref="0x107f83b68"/></from>
+      <to><interface-ref name="HplAT91_GPIOPin" scoped="" ref="0x1080fb1c8"/>
+      <arguments>
+        <value cst="I:8">
+          <type-int cname="unsigned int" unsigned="" size="I:4" alignment="I:4"></type-int>
+        </value>
+      </arguments>
+      </to>
+    </wire>
+    <wire loc="67:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/system/MainC.nc">
+      <from><interface-ref name="Scheduler" scoped="" ref="0x107d86df8"/></from>
+      <to><interface-ref name="Scheduler" scoped="" ref="0x10789b020"/></to>
+    </wire>
+    <wire loc="53:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/system/TinySchedulerC.nc">
+      <from><interface-ref name="Scheduler" scoped="" ref="0x10789b020"/></from>
+      <to><interface-ref name="Scheduler" scoped="" ref="0x107d50378"/></to>
+    </wire>
+    <wire loc="68:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/system/MainC.nc">
+      <from><interface-ref name="PlatformInit" scoped="" ref="0x107df37f8"/></from>
+      <to><interface-ref name="Init" scoped="" ref="0x107d6b898"/></to>
+    </wire>
+    <wire loc="38:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/platforms/nxtmote/PlatformC.nc">
+      <from><interface-ref name="Init" scoped="" ref="0x107d6b898"/></from>
+      <to><interface-ref name="Init" scoped="" ref="0x107d84818"/></to>
+    </wire>
+    <wire loc="71:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/system/MainC.nc">
+      <from><interface-ref name="SoftwareInit" scoped="" ref="0x107df2020"/></from>
+      <to><interface-ref name="SoftwareInit" scoped="" ref="0x107d87b08"/></to>
+    </wire>
+    <wire loc="22:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/timer/HplAT91PitC.nc">
+      <from><interface-ref name="Init" scoped="" ref="0x107da0380"/></from>
+      <to><interface-ref name="Init" scoped="" ref="0x107dce020"/></to>
+    </wire>
+    <wire loc="49:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HalLCDC.nc">
+      <from><interface-ref name="InitL3" scoped="" ref="0x107d80398"/></from>
+      <to><interface-ref name="Init" scoped="" ref="0x10804c988"/></to>
+    </wire>
+    <wire loc="51:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2CC.nc">
+      <from><interface-ref name="InitL1" scoped="" ref="0x107d81668"/></from>
+      <to><interface-ref name="Init" scoped="" ref="0x10801a4c8"/></to>
+    </wire>
+    <wire loc="26:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/timer/HplAT91PitC.nc">
+      <from><interface-ref name="SysIrq" scoped="" ref="0x107dcd720"/></from>
+      <to><interface-ref name="AT91Irq" scoped="" ref="0x107d9f020"/>
+      <arguments>
+        <value cst="I:1">
+          <type-int cname="unsigned int" unsigned="" size="I:4" alignment="I:4"></type-int>
+        </value>
+      </arguments>
+      </to>
+    </wire>
+    <wire loc="21:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/timer/HplAT91PitM.nc">
+      <from><interface-ref name="fireFromTask" scoped="" ref="0x107dcb020"/></from>
+      <to><interface-ref name="TaskBasic" scoped="" ref="0x107973b18"/>
+      <arguments>
+        <value cst="I:0">
+          <type-int cname="int" size="I:4" alignment="I:4"></type-int>
+        </value>
+      </arguments>
+      </to>
+    </wire>
+    <wire loc="54:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/system/TinySchedulerC.nc">
+      <from><interface-ref name="TaskBasic" scoped="" ref="0x107973b18"/></from>
+      <to><interface-ref name="TaskBasic" scoped="" ref="0x107d4f208"/></to>
+    </wire>
+    <wire loc="55:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/system/TinySchedulerC.nc">
+      <from><interface-ref name="McuSleep" scoped="" ref="0x107d4c6e8"/></from>
+      <to><interface-ref name="McuSleep" scoped="" ref="0x1079f7190"/></to>
+    </wire>
+    <wire loc="55:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HalAT91I2CMasterC.nc">
+      <from><interface-ref name="HalLCD" scoped="" ref="0x107f8ea90"/></from>
+      <to><interface-ref name="HalLCD" scoped="" ref="0x10804f020"/></to>
+    </wire>
+    <wire loc="61:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HalAT91I2CMasterC.nc">
+      <from><interface-ref name="I2C" scoped="" ref="0x107f90ba0"/></from>
+      <to><interface-ref name="I2C" scoped="" ref="0x10801e950"/></to>
+    </wire>
+    <wire loc="49:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2CC.nc">
+      <from><interface-ref name="I2C" scoped="" ref="0x10801e950"/></from>
+      <to><interface-ref name="I2C" scoped="" ref="0x10801ab68"/></to>
+    </wire>
+    <wire loc="63:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HalAT91I2CMasterC.nc">
+      <from><interface-ref name="I2CSCL" scoped="" ref="0x107f96060"/></from>
+      <to><interface-ref name="I2CSCL" scoped="" ref="0x107f7b5e0"/></to>
+    </wire>
+    <wire loc="64:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HalAT91I2CMasterC.nc">
+      <from><interface-ref name="I2CSDA" scoped="" ref="0x107f8f548"/></from>
+      <to><interface-ref name="I2CSDA" scoped="" ref="0x107f83b68"/></to>
+    </wire>
+    <wire loc="276:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HalAT91I2CMasterP.nc">
+      <from><interface-ref name="handleWriteError" scoped="" ref="0x107fe44e0"/></from>
+      <to><interface-ref name="TaskBasic" scoped="" ref="0x107973b18"/>
+      <arguments>
+        <value cst="I:2">
+          <type-int cname="int" size="I:4" alignment="I:4"></type-int>
+        </value>
+      </arguments>
+      </to>
+    </wire>
+    <wire loc="266:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HalAT91I2CMasterP.nc">
+      <from><interface-ref name="handleReadError" scoped="" ref="0x107fe8190"/></from>
+      <to><interface-ref name="TaskBasic" scoped="" ref="0x107973b18"/>
+      <arguments>
+        <value cst="I:1">
+          <type-int cname="int" size="I:4" alignment="I:4"></type-int>
+        </value>
+      </arguments>
+      </to>
+    </wire>
+    <wire loc="52:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2CC.nc">
+      <from><interface-ref name="I2CIrq" scoped="" ref="0x108016060"/></from>
+      <to><interface-ref name="AT91Irq" scoped="" ref="0x107d9f020"/>
+      <arguments>
+        <value cst="I:9">
+          <type-int cname="unsigned int" unsigned="" size="I:4" alignment="I:4"></type-int>
+        </value>
+      </arguments>
+      </to>
+    </wire>
+    <wire loc="47:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HalLCDC.nc">
+      <from><interface-ref name="HplLCD" scoped="" ref="0x108046e68"/></from>
+      <to><interface-ref name="HplUC1601LCD" scoped="" ref="0x10804e9a8"/></to>
+    </wire>
+    <wire loc="47:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HplUC1601LCDC.nc">
+      <from><interface-ref name="HplUC1601LCD" scoped="" ref="0x10804e9a8"/></from>
+      <to><interface-ref name="HplLCD" scoped="" ref="0x108058020"/></to>
+    </wire>
+    <wire loc="49:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HplUC1601LCDC.nc">
+      <from><interface-ref name="SpiPacket" scoped="" ref="0x108054020"/></from>
+      <to><interface-ref name="SpiPacket" scoped="" ref="0x1080c8080"/></to>
+    </wire>
+    <wire loc="57:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HalAT91SpiPioC.nc">
+      <from><interface-ref name="SpiPacket" scoped="" ref="0x1080c8080"/></from>
+      <to><interface-ref name="SpiPacket" scoped="" ref="0x1080c08a8"/></to>
+    </wire>
+    <wire loc="50:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HplUC1601LCDC.nc">
+      <from><interface-ref name="SpiControl" scoped="" ref="0x108056d10"/></from>
+      <to><interface-ref name="HalAT91SPICntl" scoped="" ref="0x1080a30c0"/></to>
+    </wire>
+    <wire loc="51:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HplUC1601LCDC.nc">
+      <from><interface-ref name="PitTimer" scoped="" ref="0x108054840"/></from>
+      <to><interface-ref name="HplAT91Pit" scoped="" ref="0x107dd0720"/></to>
+    </wire>
+    <wire loc="61:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HalAT91SpiPioC.nc">
+      <from><interface-ref name="SPI" scoped="" ref="0x1080a2100"/></from>
+      <to><interface-ref name="SPI" scoped="" ref="0x1080c7020"/></to>
+    </wire>
+    <wire loc="56:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HalAT91SpiPioC.nc">
+      <from><interface-ref name="SpiByte" scoped="" ref="0x1080c69f0"/></from>
+      <to><interface-ref name="SpiByte" scoped="" ref="0x1080c02b0"/></to>
+    </wire>
+    <wire loc="55:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HalAT91SpiPioC.nc">
+      <from><interface-ref name="Init" scoped="" ref="0x1080a4508"/></from>
+      <to><interface-ref name="Init" scoped="" ref="0x1080c3b58"/></to>
+    </wire>
+    <wire loc="58:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HalAT91SpiPioC.nc">
+      <from><interface-ref name="HalAT91SPICntl" scoped="" ref="0x1080c8870"/></from>
+      <to><interface-ref name="HalAT91SPICntl" scoped="" ref="0x1080a30c0"/></to>
+    </wire>
+    <wire loc="60:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HalAT91SpiPioC.nc">
+      <from><interface-ref name="SPI" scoped="" ref="0x1080bf188"/></from>
+      <to><interface-ref name="SPI" scoped="" ref="0x1080c7020"/></to>
+    </wire>
+    <wire loc="69:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HalAT91SpiPioM.nc">
+      <from><interface-ref name="SpiPacketDone" scoped="" ref="0x1080e8020"/></from>
+      <to><interface-ref name="TaskBasic" scoped="" ref="0x107973b18"/>
+      <arguments>
+        <value cst="I:3">
+          <type-int cname="int" size="I:4" alignment="I:4"></type-int>
+        </value>
+      </arguments>
+      </to>
+    </wire>
+    <wire loc="43:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/gpio/HplAT91_GPIOC.nc">
+      <from><interface-ref name="HplAT91_GPIOPin" scoped="" ref="0x1080fb1c8"/></from>
+      <to><interface-ref name="HplAT91_GPIOPin" scoped="" ref="0x1080f73d0"/></to>
+    </wire>
+  </wiring>
+  <components>
+    <component qname="MainC" loc="56:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/system/MainC.nc">
+      <documentation loc="1:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/platforms/nxtmote/hardware.h">
+        <short>&#10; Adapted for nxtmote.</short>
+        <long>&#10; Adapted for nxtmote.&#10; @author Rasmus Pedersen&#10;</long>
+      </documentation>
+      <configuration/>
+    </component>
+    <component qname="PlatformC" loc="32:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/platforms/nxtmote/PlatformC.nc">
+      <configuration/>
+    </component>
+    <component qname="PlatformP" loc="39:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/platforms/nxtmote/PlatformP.nc">
+      <documentation loc="1:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/platforms/nxtmote/hardware.h">
+        <short>&#10; Adapted for nxtmote.</short>
+        <long>&#10; Adapted for nxtmote.&#10; @author Rasmus Pedersen&#10;</long>
+      </documentation>
+      <module/>
+    </component>
+    <component qname="HplAT91InterruptM" loc="6:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/HplAT91InterruptM.nc">
+      <documentation loc="1:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/platforms/nxtmote/hardware.h">
+        <short>&#10; Adapted for nxtmote.</short>
+        <long>&#10; Adapted for nxtmote.&#10; @author Rasmus Pedersen&#10;</long>
+      </documentation>
+      <module/>
+    </component>
+    <component qname="HplAT91PitC" loc="6:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/timer/HplAT91PitC.nc">
+      <documentation loc="1:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/timer/HplAT91PitC.nc">
+        <short>&#10; Periodic Interval Timer.</short>
+        <long>&#10; Periodic Interval Timer. &#10; Adapted for nxtmote.&#10; @author Rasmus Ulslev Pedersen&#10;</long>
+      </documentation>
+      <configuration/>
+    </component>
+    <component qname="HplAT91PitM" loc="7:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/timer/HplAT91PitM.nc">
+      <documentation loc="1:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/platforms/nxtmote/hardware.h">
+        <short>&#10; Adapted for nxtmote.</short>
+        <long>&#10; Adapted for nxtmote.&#10; @author Rasmus Pedersen&#10;</long>
+      </documentation>
+      <module/>
+    </component>
+    <component qname="RealMainP" loc="56:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/system/RealMainP.nc" safe="">
+      <documentation loc="49:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/system/RealMainP.nc">
+        <short>&#10; RealMain implements the TinyOS boot sequence, as documented in TEP 107.</short>
+        <long>&#10; RealMain implements the TinyOS boot sequence, as documented in TEP 107.&#10;&#10; @author Philip Levis&#10; @date   January 17 2005&#10;</long>
+      </documentation>
+      <module/>
+    </component>
+    <component qname="TinySchedulerC" loc="46:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/system/TinySchedulerC.nc">
+      <documentation loc="34:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/system/TinySchedulerC.nc">
+        <short>&#10; The TinyOS scheduler.</short>
+        <long>&#10; The TinyOS scheduler. It provides two interfaces: Scheduler,&#10; for TinyOS to initialize and run tasks, and TaskBasic, the simplext&#10; class of TinyOS tasks (reserved always at-most-once posting,&#10; FIFO, parameter-free). For details and information on how to&#10; replace the scheduler, refer to TEP 106.&#10;&#10; @author  Phil Levis&#10; @date    August 7 2005&#10; @see     TEP 106: Tasks and Schedulers&#10;</long>
+      </documentation>
+      <configuration/>
+    </component>
+    <component qname="SchedulerBasicP" loc="54:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/system/SchedulerBasicP.nc" safe="">
+      <module/>
+    </component>
+    <component qname="McuSleepC" loc="15:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/platforms/nxtmote/McuSleepC.nc">
+      <documentation loc="11:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/platforms/nxtmote/McuSleepC.nc">
+        <short>&#10; Dummy implementation to support the null platform.</short>
+        <long>&#10; Dummy implementation to support the null platform.&#10;</long>
+      </documentation>
+      <module/>
+    </component>
+    <component qname="TestI2CM" loc="62:TestI2CM.nc">
+      <module/>
+    </component>
+    <component qname="HalAT91I2CMasterC" loc="40:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HalAT91I2CMasterC.nc">
+      <documentation loc="32:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/types/I2C.h">
+        <short>&#10; </short>
+        <long>&#10; @author Phil Buonadonna&#10; @author Philip Levis&#10;</long>
+      </documentation>
+      <configuration/>
+    </component>
+    <component qname="HalAT91I2CMasterP" loc="48:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HalAT91I2CMasterP.nc">
+      <documentation loc="32:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/types/I2C.h">
+        <short>&#10; </short>
+        <long>&#10; @author Phil Buonadonna&#10; @author Philip Levis&#10;</long>
+      </documentation>
+      <module/>
+    </component>
+    <component qname="HplAT91I2CC" loc="35:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2CC.nc">
+      <documentation loc="30:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2CC.nc">
+        <short>&#10;&#10; </short>
+        <long>&#10;&#10; @author Rasmus Ulslev Pedersen&#10;</long>
+      </documentation>
+      <configuration/>
+    </component>
+    <component qname="HplAT91I2CP" loc="36:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2CP.nc">
+      <documentation loc="30:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2CP.nc">
+        <short>&#10; The Hpl Interface for the I2C component.</short>
+        <long>&#10; The Hpl Interface for the I2C component. &#10;&#10; @author Rasmus Ulslev Pedersen&#10;</long>
+      </documentation>
+      <module/>
+    </component>
+    <component qname="HalLCDC" loc="36:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HalLCDC.nc">
+      <documentation loc="31:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HalLCDC.nc">
+        <short>&#10; Display configuration.</short>
+        <long>&#10; Display configuration.&#10; @author Rasmus Pedersen&#10;</long>
+      </documentation>
+      <configuration/>
+    </component>
+    <component qname="HalLCDM" loc="8:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HalLCDM.nc">
+      <documentation loc="30:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/LCD.h">
+        <short>&#10;&#10; </short>
+        <long>&#10;&#10; @author Rasmus Ulslev Pedersen&#10;</long>
+      </documentation>
+      <module/>
+    </component>
+    <component qname="HplUC1601LCDC" loc="36:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HplUC1601LCDC.nc">
+      <documentation loc="31:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HplUC1601LCDC.nc">
+        <short>&#10; Display configuration.</short>
+        <long>&#10; Display configuration.&#10; @author Rasmus Ulslev Pedersen&#10;</long>
+      </documentation>
+      <configuration/>
+    </component>
+    <component qname="HplUC1601LCDM" loc="36:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HplUC1601LCDM.nc">
+      <documentation loc="30:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/LCD.h">
+        <short>&#10;&#10; </short>
+        <long>&#10;&#10; @author Rasmus Ulslev Pedersen&#10;</long>
+      </documentation>
+      <module/>
+    </component>
+    <component qname="HalAT91SPIControlP" loc="41:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HalAT91SPIControlP.nc">
+      <documentation loc="30:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/SPI.h">
+        <short>&#10;&#10; </short>
+        <long>&#10;&#10; @author Kaisen Lin&#10; @author Phil Buonadonna&#10;</long>
+      </documentation>
+      <module/>
+    </component>
+    <component qname="HalAT91SpiPioC" loc="41:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HalAT91SpiPioC.nc">
+      <documentation loc="36:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HalAT91SpiPioC.nc">
+        <short>&#10; Adapted for nxtmote.</short>
+        <long>&#10; Adapted for nxtmote.&#10; @author Rasmus Ulslev Pedersen&#10;</long>
+      </documentation>
+      <configuration/>
+    </component>
+    <component qname="HalAT91SpiPioM" loc="54:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HalAT91SpiPioM.nc">
+      <documentation loc="50:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HalAT91SpiPioM.nc">
+        <short>&#10; Adapted for nxtmote.</short>
+        <long>&#10; Adapted for nxtmote.&#10; @author Rasmus Ulslev Pedersen&#10;</long>
+      </documentation>
+      <module/>
+    </component>
+    <component qname="HplAT91_GPIOC" loc="34:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/gpio/HplAT91_GPIOC.nc">
+      <documentation loc="30:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/gpio/HplAT91_GPIOC.nc">
+        <short>&#10; Adapted for nxtmote.</short>
+        <long>&#10; Adapted for nxtmote.&#10; @author Rasmus Pedersen&#10;</long>
+      </documentation>
+      <configuration/>
+    </component>
+    <component qname="HplAT91_GPIOM" loc="7:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/gpio/HplAT91_GPIOM.nc">
+      <documentation loc="1:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/gpio/HplAT91_GPIOM.nc">
+        <short>&#10; Adapted for nxtmote.</short>
+        <long>&#10; Adapted for nxtmote.&#10; @author Rasmus Pedersen&#10;</long>
+      </documentation>
+      <module/>
+    </component>
+  </components>
+  <interfaces>
+    <interface provided="0" name="SoftwareInit" ref="0x107d87b08" loc="58:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/system/MainC.nc">
+      <component-ref qname="MainC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="SoftwareInit" scoped="" ref="0x107d87b08"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x107d87e58"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="Boot" ref="0x107d886e8" loc="57:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/system/MainC.nc">
+      <component-ref qname="MainC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="Boot" scoped="" ref="0x107d886e8"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Boot"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="booted" scoped="" ref="0x107d88a38"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="Init" ref="0x107d6b898" loc="33:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/platforms/nxtmote/PlatformC.nc">
+      <component-ref qname="PlatformC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="Init" scoped="" ref="0x107d6b898"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x107d6bbe8"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="InitL2" ref="0x107d81cb0" loc="44:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/platforms/nxtmote/PlatformP.nc">
+      <component-ref qname="PlatformP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="InitL2" scoped="" ref="0x107d81cb0"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x107d800a0"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="Init" ref="0x107d84818" loc="40:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/platforms/nxtmote/PlatformP.nc">
+      <component-ref qname="PlatformP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="Init" scoped="" ref="0x107d84818"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x107d84b68"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="InitL0" ref="0x107d81020" loc="42:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/platforms/nxtmote/PlatformP.nc">
+      <component-ref qname="PlatformP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="InitL0" scoped="" ref="0x107d81020"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x107d81370"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="InitL3" ref="0x107d80398" loc="45:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/platforms/nxtmote/PlatformP.nc">
+      <component-ref qname="PlatformP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="InitL3" scoped="" ref="0x107d80398"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x107d806e8"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="PInit" ref="0x107d809d8" loc="46:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/platforms/nxtmote/PlatformP.nc">
+      <component-ref qname="PlatformP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="PInit" scoped="" ref="0x107d809d8"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x107d80d28"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="InitL1" ref="0x107d81668" loc="43:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/platforms/nxtmote/PlatformP.nc">
+      <component-ref qname="PlatformP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="InitL1" scoped="" ref="0x107d81668"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x107d819b8"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="AT91Fiq" ref="0x107d9b1c8" loc="11:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/HplAT91InterruptM.nc">
+      <component-ref qname="HplAT91InterruptM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="AT91Fiq" scoped="" ref="0x107d9b1c8"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HplAT91Interrupt"/>
+      </instance>
+      <interface-parameters>
+        <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+          <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="fired" scoped="" ref="0x107d9b518"/>
+        <function-ref name="disable" scoped="" ref="0x107d9b6a0"/>
+        <function-ref name="enable" scoped="" ref="0x107d9b828"/>
+        <function-ref name="allocate" scoped="" ref="0x107d9b9b0"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="AT91Irq" ref="0x107d9f020" loc="10:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/HplAT91InterruptM.nc">
+      <component-ref qname="HplAT91InterruptM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="AT91Irq" scoped="" ref="0x107d9f020"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HplAT91Interrupt"/>
+      </instance>
+      <interface-parameters>
+        <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+          <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="fired" scoped="" ref="0x107d9f370"/>
+        <function-ref name="disable" scoped="" ref="0x107d9f4f8"/>
+        <function-ref name="enable" scoped="" ref="0x107d9f680"/>
+        <function-ref name="allocate" scoped="" ref="0x107d9f808"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="Init" ref="0x107da0380" loc="9:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/timer/HplAT91PitC.nc">
+      <component-ref qname="HplAT91PitC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="Init" scoped="" ref="0x107da0380"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x107da06d0"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="HplAT91Pit" ref="0x107dd0720" loc="10:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/timer/HplAT91PitC.nc">
+      <component-ref qname="HplAT91PitC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="HplAT91Pit" scoped="" ref="0x107dd0720"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HplAT91Pit"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="fired" scoped="" ref="0x107dd0a70"/>
+        <function-ref name="getPITMR" scoped="" ref="0x107dd0bf8"/>
+        <function-ref name="setPITMR" scoped="" ref="0x107dd0d80"/>
+        <function-ref name="getPITPIVR" scoped="" ref="0x107dd6020"/>
+        <function-ref name="firedTask" scoped="" ref="0x107dd61a8"/>
+        <function-ref name="getPITPIIR" scoped="" ref="0x107dd6330"/>
+        <function-ref name="getPITSR" scoped="" ref="0x107dd64b8"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="Init" ref="0x107dce020" loc="9:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/timer/HplAT91PitM.nc">
+      <component-ref qname="HplAT91PitM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="Init" scoped="" ref="0x107dce020"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x107dce370"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="fireFromTask" ref="0x107dcb020" loc="21:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/timer/HplAT91PitM.nc">
+      <component-ref qname="HplAT91PitM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="fireFromTask" scoped="" ref="0x107dcb020"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="TaskBasic"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="postTask" scoped="" ref="0x107dcb370"/>
+        <function-ref name="runTask" scoped="" ref="0x107dcb4f8"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="SysIrq" ref="0x107dcd720" loc="13:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/timer/HplAT91PitM.nc">
+      <component-ref qname="HplAT91PitM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="SysIrq" scoped="" ref="0x107dcd720"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HplAT91Interrupt"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="fired" scoped="" ref="0x107dcda70"/>
+        <function-ref name="disable" scoped="" ref="0x107dcdbf8"/>
+        <function-ref name="enable" scoped="" ref="0x107dcdd80"/>
+        <function-ref name="allocate" scoped="" ref="0x107dcc020"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="HplAT91Pit" ref="0x107dce620" loc="10:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/timer/HplAT91PitM.nc">
+      <component-ref qname="HplAT91PitM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="HplAT91Pit" scoped="" ref="0x107dce620"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HplAT91Pit"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="fired" scoped="" ref="0x107dce970"/>
+        <function-ref name="getPITMR" scoped="" ref="0x107dceaf8"/>
+        <function-ref name="setPITMR" scoped="" ref="0x107dcec80"/>
+        <function-ref name="getPITPIVR" scoped="" ref="0x107dcee08"/>
+        <function-ref name="firedTask" scoped="" ref="0x107dcd020"/>
+        <function-ref name="getPITPIIR" scoped="" ref="0x107dcd1a8"/>
+        <function-ref name="getPITSR" scoped="" ref="0x107dcd330"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="SoftwareInit" ref="0x107df2020" loc="60:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/system/RealMainP.nc">
+      <component-ref qname="RealMainP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="SoftwareInit" scoped="" ref="0x107df2020"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x107df2370"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="Boot" ref="0x107d867c0" loc="57:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/system/RealMainP.nc">
+      <component-ref qname="RealMainP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="Boot" scoped="" ref="0x107d867c0"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Boot"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="booted" scoped="" ref="0x107d86b10"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="PlatformInit" ref="0x107df37f8" loc="59:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/system/RealMainP.nc">
+      <component-ref qname="RealMainP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="PlatformInit" scoped="" ref="0x107df37f8"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x107df3b48"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="Scheduler" ref="0x107d86df8" loc="58:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/system/RealMainP.nc">
+      <component-ref qname="RealMainP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="Scheduler" scoped="" ref="0x107d86df8"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Scheduler"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x107df3170"/>
+        <function-ref name="taskLoop" scoped="" ref="0x107df32f8"/>
+        <function-ref name="runNextTask" scoped="" ref="0x107df3480"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="TaskBasic" ref="0x107973b18" loc="48:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/system/TinySchedulerC.nc">
+      <component-ref qname="TinySchedulerC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="TaskBasic" scoped="" ref="0x107973b18"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="TaskBasic"/>
+      </instance>
+      <interface-parameters>
+        <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+          <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="postTask" scoped="" ref="0x107973e68"/>
+        <function-ref name="runTask" scoped="" ref="0x10791e020"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="Scheduler" ref="0x10789b020" loc="47:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/system/TinySchedulerC.nc">
+      <component-ref qname="TinySchedulerC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="Scheduler" scoped="" ref="0x10789b020"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Scheduler"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x10789b370"/>
+        <function-ref name="taskLoop" scoped="" ref="0x10789b4f8"/>
+        <function-ref name="runNextTask" scoped="" ref="0x10789b680"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="TaskBasic" ref="0x107d4f208" loc="56:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/system/SchedulerBasicP.nc">
+      <component-ref qname="SchedulerBasicP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="TaskBasic" scoped="" ref="0x107d4f208"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="TaskBasic"/>
+      </instance>
+      <interface-parameters>
+        <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+          <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="postTask" scoped="" ref="0x107d4f558"/>
+        <function-ref name="runTask" scoped="" ref="0x107d4f6e0"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="McuSleep" ref="0x107d4c6e8" loc="57:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/system/SchedulerBasicP.nc">
+      <component-ref qname="SchedulerBasicP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="McuSleep" scoped="" ref="0x107d4c6e8"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="McuSleep"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="sleep" scoped="" ref="0x107d4ca38"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="Scheduler" ref="0x107d50378" loc="55:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/system/SchedulerBasicP.nc">
+      <component-ref qname="SchedulerBasicP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="Scheduler" scoped="" ref="0x107d50378"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Scheduler"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x107d506c8"/>
+        <function-ref name="taskLoop" scoped="" ref="0x107d50850"/>
+        <function-ref name="runNextTask" scoped="" ref="0x107d509d8"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="McuSleep" ref="0x1079f7190" loc="17:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/platforms/nxtmote/McuSleepC.nc">
+      <component-ref qname="McuSleepC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="McuSleep" scoped="" ref="0x1079f7190"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="McuSleep"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="sleep" scoped="" ref="0x1079f74e0"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="McuPowerState" ref="0x107d71600" loc="18:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/platforms/nxtmote/McuSleepC.nc">
+      <component-ref qname="McuSleepC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="McuPowerState" scoped="" ref="0x107d71600"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="McuPowerState"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="update" scoped="" ref="0x107d71950"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="Boot" ref="0x107f44080" loc="70:TestI2CM.nc">
+      <component-ref qname="TestI2CM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="Boot" scoped="" ref="0x107f44080"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Boot"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="booted" scoped="" ref="0x107f443d0"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="SubInit" ref="0x107f42020" loc="76:TestI2CM.nc">
+      <component-ref qname="TestI2CM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="SubInit" scoped="" ref="0x107f42020"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x107f42370"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="Init" ref="0x107f2e348" loc="64:TestI2CM.nc">
+      <component-ref qname="TestI2CM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="Init" scoped="" ref="0x107f2e348"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x107f2e698"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="PitTimer" ref="0x107f44718" loc="72:TestI2CM.nc">
+      <component-ref qname="TestI2CM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="PitTimer" scoped="" ref="0x107f44718"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HplAT91Pit"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="fired" scoped="" ref="0x107f44a68"/>
+        <function-ref name="getPITMR" scoped="" ref="0x107f44bf0"/>
+        <function-ref name="setPITMR" scoped="" ref="0x107f44d78"/>
+        <function-ref name="getPITPIVR" scoped="" ref="0x107f43020"/>
+        <function-ref name="firedTask" scoped="" ref="0x107f431a8"/>
+        <function-ref name="getPITPIIR" scoped="" ref="0x107f43330"/>
+        <function-ref name="getPITSR" scoped="" ref="0x107f434b8"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="I2CPacket" ref="0x107f46608" loc="67:TestI2CM.nc">
+      <component-ref qname="TestI2CM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="I2CPacket" scoped="" ref="0x107f46608"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="I2CPacket"/>
+        <arguments>
+          <type-tag size="I:0" alignment="I:4"><struct-ref ref="0x107de8660"/>
+            <typename><typedef-ref name="TI2CBasicAddr" ref="0x107de8908"/></typename>
+          </type-tag>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="read" scoped="" ref="0x107f521d0"/>
+        <function-ref name="writeDone" scoped="" ref="0x107f47530"/>
+        <function-ref name="write" scoped="" ref="0x107f52d50"/>
+        <function-ref name="readDone" scoped="" ref="0x107f51928"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="HalLCD" ref="0x107f656e0" loc="74:TestI2CM.nc">
+      <component-ref qname="TestI2CM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="HalLCD" scoped="" ref="0x107f656e0"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HalLCD"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="displayString" scoped="" ref="0x107f65a30"/>
+        <function-ref name="displayStringFast" scoped="" ref="0x107f65bb8"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="I2CSCL" ref="0x107f7b5e0" loc="44:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HalAT91I2CMasterC.nc">
+      <component-ref qname="HalAT91I2CMasterC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="I2CSCL" scoped="" ref="0x107f7b5e0"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HplAT91_GPIOPin"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="getPIOPDSR" scoped="" ref="0x107f7b930"/>
+        <function-ref name="setPIOPDR" scoped="" ref="0x107f7bab8"/>
+        <function-ref name="setPIOCODR" scoped="" ref="0x107f7bc40"/>
+        <function-ref name="interruptGPIOPin" scoped="" ref="0x107f7bdc8"/>
+        <function-ref name="setPIOPER" scoped="" ref="0x107f83020"/>
+        <function-ref name="setPIOPPUDR" scoped="" ref="0x107f831a8"/>
+        <function-ref name="setPIOOER" scoped="" ref="0x107f83330"/>
+        <function-ref name="setPIOSODR" scoped="" ref="0x107f834b8"/>
+        <function-ref name="setPIOMDER" scoped="" ref="0x107f83640"/>
+        <function-ref name="setPIOASR" scoped="" ref="0x107f837c8"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="I2CSDA" ref="0x107f83b68" loc="45:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HalAT91I2CMasterC.nc">
+      <component-ref qname="HalAT91I2CMasterC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="I2CSDA" scoped="" ref="0x107f83b68"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HplAT91_GPIOPin"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="getPIOPDSR" scoped="" ref="0x107f82020"/>
+        <function-ref name="setPIOPDR" scoped="" ref="0x107f821a8"/>
+        <function-ref name="setPIOCODR" scoped="" ref="0x107f82330"/>
+        <function-ref name="interruptGPIOPin" scoped="" ref="0x107f824b8"/>
+        <function-ref name="setPIOPER" scoped="" ref="0x107f82640"/>
+        <function-ref name="setPIOPPUDR" scoped="" ref="0x107f827c8"/>
+        <function-ref name="setPIOOER" scoped="" ref="0x107f82950"/>
+        <function-ref name="setPIOSODR" scoped="" ref="0x107f82ad8"/>
+        <function-ref name="setPIOMDER" scoped="" ref="0x107f82c60"/>
+        <function-ref name="setPIOASR" scoped="" ref="0x107f82de8"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="I2CPacket" ref="0x107f87020" loc="42:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HalAT91I2CMasterC.nc">
+      <component-ref qname="HalAT91I2CMasterC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="I2CPacket" scoped="" ref="0x107f87020"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="I2CPacket"/>
+        <arguments>
+          <type-tag size="I:0" alignment="I:4"><struct-ref ref="0x107de8660"/>
+            <typename><typedef-ref name="TI2CBasicAddr" ref="0x107de8908"/></typename>
+          </type-tag>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="read" scoped="" ref="0x107f87ba0"/>
+        <function-ref name="writeDone" scoped="" ref="0x107f84020"/>
+        <function-ref name="write" scoped="" ref="0x107f86790"/>
+        <function-ref name="readDone" scoped="" ref="0x107f85388"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="handleWriteError" ref="0x107fe44e0" loc="276:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HalAT91I2CMasterP.nc">
+      <component-ref qname="HalAT91I2CMasterP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="handleWriteError" scoped="" ref="0x107fe44e0"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="TaskBasic"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="postTask" scoped="" ref="0x107fe4830"/>
+        <function-ref name="runTask" scoped="" ref="0x107fe49b8"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="I2C" ref="0x107f90ba0" loc="53:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HalAT91I2CMasterP.nc">
+      <component-ref qname="HalAT91I2CMasterP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="I2C" scoped="" ref="0x107f90ba0"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HplAT91I2C"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="setTWIMMR" scoped="" ref="0x107f97020"/>
+        <function-ref name="setTWIIDR" scoped="" ref="0x107f971a8"/>
+        <function-ref name="setTWIIER" scoped="" ref="0x107f97330"/>
+        <function-ref name="setTWICR" scoped="" ref="0x107f974b8"/>
+        <function-ref name="getTWISR" scoped="" ref="0x107f97640"/>
+        <function-ref name="getTWIRHR" scoped="" ref="0x107f977c8"/>
+        <function-ref name="setTWICWGR" scoped="" ref="0x107f97950"/>
+        <function-ref name="interruptI2C" scoped="" ref="0x107f97ad8"/>
+        <function-ref name="setTWITHR" scoped="" ref="0x107f97c60"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="Init" ref="0x107f7ac40" loc="50:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HalAT91I2CMasterP.nc">
+      <component-ref qname="HalAT91I2CMasterP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="Init" scoped="" ref="0x107f7ac40"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x107f9d020"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="I2CSCL" ref="0x107f96060" loc="55:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HalAT91I2CMasterP.nc">
+      <component-ref qname="HalAT91I2CMasterP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="I2CSCL" scoped="" ref="0x107f96060"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HplAT91_GPIOPin"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="getPIOPDSR" scoped="" ref="0x107f963b0"/>
+        <function-ref name="setPIOPDR" scoped="" ref="0x107f96538"/>
+        <function-ref name="setPIOCODR" scoped="" ref="0x107f966c0"/>
+        <function-ref name="interruptGPIOPin" scoped="" ref="0x107f96848"/>
+        <function-ref name="setPIOPER" scoped="" ref="0x107f969d0"/>
+        <function-ref name="setPIOPPUDR" scoped="" ref="0x107f96b58"/>
+        <function-ref name="setPIOOER" scoped="" ref="0x107f96ce0"/>
+        <function-ref name="setPIOSODR" scoped="" ref="0x107f96e68"/>
+        <function-ref name="setPIOMDER" scoped="" ref="0x107f8f020"/>
+        <function-ref name="setPIOASR" scoped="" ref="0x107f8f1a8"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="I2CSDA" ref="0x107f8f548" loc="56:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HalAT91I2CMasterP.nc">
+      <component-ref qname="HalAT91I2CMasterP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="I2CSDA" scoped="" ref="0x107f8f548"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HplAT91_GPIOPin"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="getPIOPDSR" scoped="" ref="0x107f8f898"/>
+        <function-ref name="setPIOPDR" scoped="" ref="0x107f8fa20"/>
+        <function-ref name="setPIOCODR" scoped="" ref="0x107f8fba8"/>
+        <function-ref name="interruptGPIOPin" scoped="" ref="0x107f8fd30"/>
+        <function-ref name="setPIOPER" scoped="" ref="0x107f8e020"/>
+        <function-ref name="setPIOPPUDR" scoped="" ref="0x107f8e1a8"/>
+        <function-ref name="setPIOOER" scoped="" ref="0x107f8e330"/>
+        <function-ref name="setPIOSODR" scoped="" ref="0x107f8e4b8"/>
+        <function-ref name="setPIOMDER" scoped="" ref="0x107f8e640"/>
+        <function-ref name="setPIOASR" scoped="" ref="0x107f8e7c8"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="I2CPacket" ref="0x107f9d498" loc="51:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HalAT91I2CMasterP.nc">
+      <component-ref qname="HalAT91I2CMasterP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="I2CPacket" scoped="" ref="0x107f9d498"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="I2CPacket"/>
+        <arguments>
+          <type-tag size="I:0" alignment="I:4"><struct-ref ref="0x107de8660"/>
+            <typename><typedef-ref name="TI2CBasicAddr" ref="0x107de8908"/></typename>
+          </type-tag>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="read" scoped="" ref="0x107f9c088"/>
+        <function-ref name="writeDone" scoped="" ref="0x107f9a388"/>
+        <function-ref name="write" scoped="" ref="0x107f9cc08"/>
+        <function-ref name="readDone" scoped="" ref="0x107f9b7c8"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="HalLCD" ref="0x107f8ea90" loc="58:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HalAT91I2CMasterP.nc">
+      <component-ref qname="HalAT91I2CMasterP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="HalLCD" scoped="" ref="0x107f8ea90"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HalLCD"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="displayString" scoped="" ref="0x107f8ede0"/>
+        <function-ref name="displayStringFast" scoped="" ref="0x107f8d020"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="handleReadError" ref="0x107fe8190" loc="266:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HalAT91I2CMasterP.nc">
+      <component-ref qname="HalAT91I2CMasterP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="handleReadError" scoped="" ref="0x107fe8190"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="TaskBasic"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="postTask" scoped="" ref="0x107fe84e0"/>
+        <function-ref name="runTask" scoped="" ref="0x107fe8668"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="I2C" ref="0x10801e950" loc="37:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2CC.nc">
+      <component-ref qname="HplAT91I2CC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="I2C" scoped="" ref="0x10801e950"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HplAT91I2C"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="setTWIMMR" scoped="" ref="0x10801eca0"/>
+        <function-ref name="setTWIIDR" scoped="" ref="0x10801ee28"/>
+        <function-ref name="setTWIIER" scoped="" ref="0x10801b020"/>
+        <function-ref name="setTWICR" scoped="" ref="0x10801b1a8"/>
+        <function-ref name="getTWISR" scoped="" ref="0x10801b330"/>
+        <function-ref name="getTWIRHR" scoped="" ref="0x10801b4b8"/>
+        <function-ref name="setTWICWGR" scoped="" ref="0x10801b640"/>
+        <function-ref name="interruptI2C" scoped="" ref="0x10801b7c8"/>
+        <function-ref name="setTWITHR" scoped="" ref="0x10801b950"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="I2C" ref="0x10801ab68" loc="39:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2CP.nc">
+      <component-ref qname="HplAT91I2CP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="I2C" scoped="" ref="0x10801ab68"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HplAT91I2C"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="setTWIMMR" scoped="" ref="0x108017020"/>
+        <function-ref name="setTWIIDR" scoped="" ref="0x1080171a8"/>
+        <function-ref name="setTWIIER" scoped="" ref="0x108017330"/>
+        <function-ref name="setTWICR" scoped="" ref="0x1080174b8"/>
+        <function-ref name="getTWISR" scoped="" ref="0x108017640"/>
+        <function-ref name="getTWIRHR" scoped="" ref="0x1080177c8"/>
+        <function-ref name="setTWICWGR" scoped="" ref="0x108017950"/>
+        <function-ref name="interruptI2C" scoped="" ref="0x108017ad8"/>
+        <function-ref name="setTWITHR" scoped="" ref="0x108017c60"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="I2CIrq" ref="0x108016060" loc="41:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2CP.nc">
+      <component-ref qname="HplAT91I2CP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="I2CIrq" scoped="" ref="0x108016060"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HplAT91Interrupt"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="fired" scoped="" ref="0x1080163b0"/>
+        <function-ref name="disable" scoped="" ref="0x108016538"/>
+        <function-ref name="enable" scoped="" ref="0x1080166c0"/>
+        <function-ref name="allocate" scoped="" ref="0x108016848"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="Init" ref="0x10801a4c8" loc="38:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2CP.nc">
+      <component-ref qname="HplAT91I2CP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="Init" scoped="" ref="0x10801a4c8"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x10801a818"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="HalLCD" ref="0x10804f020" loc="38:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HalLCDC.nc">
+      <component-ref qname="HalLCDC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="HalLCD" scoped="" ref="0x10804f020"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HalLCD"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="displayString" scoped="" ref="0x10804f370"/>
+        <function-ref name="displayStringFast" scoped="" ref="0x10804f4f8"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="Init" ref="0x10804c988" loc="11:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HalLCDM.nc">
+      <component-ref qname="HalLCDM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="Init" scoped="" ref="0x10804c988"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x10804ccd8"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="HalLCD" ref="0x10804c238" loc="10:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HalLCDM.nc">
+      <component-ref qname="HalLCDM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="HalLCD" scoped="" ref="0x10804c238"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HalLCD"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="displayString" scoped="" ref="0x10804c588"/>
+        <function-ref name="displayStringFast" scoped="" ref="0x10804c710"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="HplLCD" ref="0x108046e68" loc="15:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HalLCDM.nc">
+      <component-ref qname="HalLCDM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="HplLCD" scoped="" ref="0x108046e68"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HplUC1601LCD"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="writefast" scoped="" ref="0x1080491e8"/>
+        <function-ref name="write" scoped="" ref="0x108049370"/>
+        <function-ref name="initLCD" scoped="" ref="0x1080494f8"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="HplUC1601LCD" ref="0x10804e9a8" loc="38:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HplUC1601LCDC.nc">
+      <component-ref qname="HplUC1601LCDC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="HplUC1601LCD" scoped="" ref="0x10804e9a8"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HplUC1601LCD"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="writefast" scoped="" ref="0x10804ecf8"/>
+        <function-ref name="write" scoped="" ref="0x10804ee80"/>
+        <function-ref name="initLCD" scoped="" ref="0x10805b030"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="SpiControl" ref="0x108056d10" loc="43:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HplUC1601LCDM.nc">
+      <component-ref qname="HplUC1601LCDM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="SpiControl" scoped="" ref="0x108056d10"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HalAT91SPICntl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="setSPIParams" scoped="" ref="0x1080550a0"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="SpiPacket" ref="0x108054020" loc="44:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HplUC1601LCDM.nc">
+      <component-ref qname="HplUC1601LCDM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="SpiPacket" scoped="" ref="0x108054020"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="SpiPacket"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="send" scoped="" ref="0x108054370"/>
+        <function-ref name="sendDone" scoped="" ref="0x1080544f8"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="Init" ref="0x1080588f8" loc="39:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HplUC1601LCDM.nc">
+      <component-ref qname="HplUC1601LCDM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="Init" scoped="" ref="0x1080588f8"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x108058c48"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="PitTimer" ref="0x108054840" loc="45:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HplUC1601LCDM.nc">
+      <component-ref qname="HplUC1601LCDM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="PitTimer" scoped="" ref="0x108054840"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HplAT91Pit"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="fired" scoped="" ref="0x108054b90"/>
+        <function-ref name="getPITMR" scoped="" ref="0x108054d18"/>
+        <function-ref name="setPITMR" scoped="" ref="0x10807d020"/>
+        <function-ref name="getPITPIVR" scoped="" ref="0x10807d1a8"/>
+        <function-ref name="firedTask" scoped="" ref="0x10807d330"/>
+        <function-ref name="getPITPIIR" scoped="" ref="0x10807d4b8"/>
+        <function-ref name="getPITSR" scoped="" ref="0x10807d640"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="HplLCD" ref="0x108058020" loc="38:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HplUC1601LCDM.nc">
+      <component-ref qname="HplUC1601LCDM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="HplLCD" scoped="" ref="0x108058020"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HplUC1601LCD"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="writefast" scoped="" ref="0x108058370"/>
+        <function-ref name="write" scoped="" ref="0x1080584f8"/>
+        <function-ref name="initLCD" scoped="" ref="0x108058680"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="HalAT91SPICntl" ref="0x1080a30c0" loc="42:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HalAT91SPIControlP.nc">
+      <component-ref qname="HalAT91SPIControlP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="HalAT91SPICntl" scoped="" ref="0x1080a30c0"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HalAT91SPICntl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="setSPIParams" scoped="" ref="0x1080a3410"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="SPI" ref="0x1080a2100" loc="44:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HalAT91SPIControlP.nc">
+      <component-ref qname="HalAT91SPIControlP"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="SPI" scoped="" ref="0x1080a2100"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HplAT91SPI"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="getSPICSR1" scoped="" ref="0x1080a2450"/>
+        <function-ref name="setSPICSR2" scoped="" ref="0x1080a25d8"/>
+        <function-ref name="getSPIMR" scoped="" ref="0x1080a2760"/>
+        <function-ref name="setSPIIER" scoped="" ref="0x1080a28e8"/>
+        <function-ref name="interruptSPI" scoped="" ref="0x1080a2a70"/>
+        <function-ref name="setSPICSR0" scoped="" ref="0x1080a2bf8"/>
+        <function-ref name="setSPITDR" scoped="" ref="0x1080a2d80"/>
+        <function-ref name="getSPICSR2" scoped="" ref="0x1080a1020"/>
+        <function-ref name="getSPISR" scoped="" ref="0x1080a11a8"/>
+        <function-ref name="getSPIRDR" scoped="" ref="0x1080a1330"/>
+        <function-ref name="setSPICR" scoped="" ref="0x1080a14b8"/>
+        <function-ref name="getSPIIMR" scoped="" ref="0x1080a1640"/>
+        <function-ref name="getSPICSR0" scoped="" ref="0x1080a17c8"/>
+        <function-ref name="setSPIIDR" scoped="" ref="0x1080a1a50"/>
+        <function-ref name="setSPICSR3" scoped="" ref="0x1080a1bd8"/>
+        <function-ref name="setSPICSR1" scoped="" ref="0x1080a1d60"/>
+        <function-ref name="getSPICSR3" scoped="" ref="0x108095020"/>
+        <function-ref name="setSPIMR" scoped="" ref="0x1080951a8"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="SpiPacket" ref="0x1080c8080" loc="45:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HalAT91SpiPioC.nc">
+      <component-ref qname="HalAT91SpiPioC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="SpiPacket" scoped="" ref="0x1080c8080"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="SpiPacket"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="send" scoped="" ref="0x1080c83d0"/>
+        <function-ref name="sendDone" scoped="" ref="0x1080c8558"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="SpiByte" ref="0x1080c69f0" loc="44:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HalAT91SpiPioC.nc">
+      <component-ref qname="HalAT91SpiPioC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="SpiByte" scoped="" ref="0x1080c69f0"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="SpiByte"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="write" scoped="" ref="0x1080c6d40"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="Init" ref="0x1080a4508" loc="43:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HalAT91SpiPioC.nc">
+      <component-ref qname="HalAT91SpiPioC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="Init" scoped="" ref="0x1080a4508"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x1080a4858"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="HalAT91SPICntl" ref="0x1080c8870" loc="46:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HalAT91SpiPioC.nc">
+      <component-ref qname="HalAT91SpiPioC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="HalAT91SPICntl" scoped="" ref="0x1080c8870"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HalAT91SPICntl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="setSPIParams" scoped="" ref="0x1080c8bc0"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="SPI" ref="0x1080c7020" loc="48:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HalAT91SpiPioC.nc">
+      <component-ref qname="HalAT91SpiPioC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="SPI" scoped="" ref="0x1080c7020"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HplAT91SPI"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="getSPICSR1" scoped="" ref="0x1080c7370"/>
+        <function-ref name="setSPICSR2" scoped="" ref="0x1080c74f8"/>
+        <function-ref name="getSPIMR" scoped="" ref="0x1080c7680"/>
+        <function-ref name="setSPIIER" scoped="" ref="0x1080c7808"/>
+        <function-ref name="interruptSPI" scoped="" ref="0x1080c7990"/>
+        <function-ref name="setSPICSR0" scoped="" ref="0x1080c7b18"/>
+        <function-ref name="setSPITDR" scoped="" ref="0x1080c7ca0"/>
+        <function-ref name="getSPICSR2" scoped="" ref="0x1080c7e28"/>
+        <function-ref name="getSPISR" scoped="" ref="0x1080c4020"/>
+        <function-ref name="getSPIRDR" scoped="" ref="0x1080c41a8"/>
+        <function-ref name="setSPICR" scoped="" ref="0x1080c4330"/>
+        <function-ref name="getSPIIMR" scoped="" ref="0x1080c44b8"/>
+        <function-ref name="getSPICSR0" scoped="" ref="0x1080c4640"/>
+        <function-ref name="setSPIIDR" scoped="" ref="0x1080c48c8"/>
+        <function-ref name="setSPICSR3" scoped="" ref="0x1080c4a50"/>
+        <function-ref name="setSPICSR1" scoped="" ref="0x1080c4bd8"/>
+        <function-ref name="getSPICSR3" scoped="" ref="0x1080c4d60"/>
+        <function-ref name="setSPIMR" scoped="" ref="0x1080c3020"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="SpiPacketDone" ref="0x1080e8020" loc="69:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HalAT91SpiPioM.nc">
+      <component-ref qname="HalAT91SpiPioM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="SpiPacketDone" scoped="" ref="0x1080e8020"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="TaskBasic"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="postTask" scoped="" ref="0x1080e8370"/>
+        <function-ref name="runTask" scoped="" ref="0x1080e84f8"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="SpiPacket" ref="0x1080c08a8" loc="59:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HalAT91SpiPioM.nc">
+      <component-ref qname="HalAT91SpiPioM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="SpiPacket" scoped="" ref="0x1080c08a8"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="SpiPacket"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="send" scoped="" ref="0x1080c0bf8"/>
+        <function-ref name="sendDone" scoped="" ref="0x1080c0d80"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="SpiByte" ref="0x1080c02b0" loc="58:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HalAT91SpiPioM.nc">
+      <component-ref qname="HalAT91SpiPioM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="SpiByte" scoped="" ref="0x1080c02b0"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="SpiByte"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="write" scoped="" ref="0x1080c0600"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="Init" ref="0x1080c3b58" loc="57:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HalAT91SpiPioM.nc">
+      <component-ref qname="HalAT91SpiPioM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="Init" scoped="" ref="0x1080c3b58"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" scoped="" ref="0x1080c0020"/>
+      </interface-functions>
+    </interface>
+    <interface provided="0" name="SPI" ref="0x1080bf188" loc="62:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HalAT91SpiPioM.nc">
+      <component-ref qname="HalAT91SpiPioM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="SPI" scoped="" ref="0x1080bf188"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HplAT91SPI"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="getSPICSR1" scoped="" ref="0x1080bf4d8"/>
+        <function-ref name="setSPICSR2" scoped="" ref="0x1080bf660"/>
+        <function-ref name="getSPIMR" scoped="" ref="0x1080bf7e8"/>
+        <function-ref name="setSPIIER" scoped="" ref="0x1080bf970"/>
+        <function-ref name="interruptSPI" scoped="" ref="0x1080bfaf8"/>
+        <function-ref name="setSPICSR0" scoped="" ref="0x1080bfc80"/>
+        <function-ref name="setSPITDR" scoped="" ref="0x1080bfe08"/>
+        <function-ref name="getSPICSR2" scoped="" ref="0x1080be020"/>
+        <function-ref name="getSPISR" scoped="" ref="0x1080be1a8"/>
+        <function-ref name="getSPIRDR" scoped="" ref="0x1080be330"/>
+        <function-ref name="setSPICR" scoped="" ref="0x1080be4b8"/>
+        <function-ref name="getSPIIMR" scoped="" ref="0x1080be640"/>
+        <function-ref name="getSPICSR0" scoped="" ref="0x1080be7c8"/>
+        <function-ref name="setSPIIDR" scoped="" ref="0x1080bea50"/>
+        <function-ref name="setSPICSR3" scoped="" ref="0x1080bebd8"/>
+        <function-ref name="setSPICSR1" scoped="" ref="0x1080bed60"/>
+        <function-ref name="getSPICSR3" scoped="" ref="0x1080e9020"/>
+        <function-ref name="setSPIMR" scoped="" ref="0x1080e91a8"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="HplAT91_GPIOPin" ref="0x1080fb1c8" loc="36:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/gpio/HplAT91_GPIOC.nc">
+      <component-ref qname="HplAT91_GPIOC"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="HplAT91_GPIOPin" scoped="" ref="0x1080fb1c8"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HplAT91_GPIOPin"/>
+      </instance>
+      <interface-parameters>
+        <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+          <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="getPIOPDSR" scoped="" ref="0x1080fb518"/>
+        <function-ref name="setPIOPDR" scoped="" ref="0x1080fb6a0"/>
+        <function-ref name="setPIOCODR" scoped="" ref="0x1080fb828"/>
+        <function-ref name="interruptGPIOPin" scoped="" ref="0x1080fb9b0"/>
+        <function-ref name="setPIOPER" scoped="" ref="0x1080fbb38"/>
+        <function-ref name="setPIOPPUDR" scoped="" ref="0x1080fbcc0"/>
+        <function-ref name="setPIOOER" scoped="" ref="0x1080fbe48"/>
+        <function-ref name="setPIOSODR" scoped="" ref="0x1080fa020"/>
+        <function-ref name="setPIOMDER" scoped="" ref="0x1080fa1a8"/>
+        <function-ref name="setPIOASR" scoped="" ref="0x1080fa330"/>
+      </interface-functions>
+    </interface>
+    <interface provided="1" name="HplAT91_GPIOPin" ref="0x1080f73d0" loc="9:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/gpio/HplAT91_GPIOM.nc">
+      <component-ref qname="HplAT91_GPIOM"/>
+      <type-interface size="I:4" alignment="I:4"><interface-ref name="HplAT91_GPIOPin" scoped="" ref="0x1080f73d0"/></type-interface>
+      <instance>
+        <interfacedef-ref qname="HplAT91_GPIOPin"/>
+      </instance>
+      <interface-parameters>
+        <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+          <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="getPIOPDSR" scoped="" ref="0x1080f7720"/>
+        <function-ref name="setPIOPDR" scoped="" ref="0x1080f78a8"/>
+        <function-ref name="setPIOCODR" scoped="" ref="0x1080f7a30"/>
+        <function-ref name="interruptGPIOPin" scoped="" ref="0x1080f7bb8"/>
+        <function-ref name="setPIOPER" scoped="" ref="0x1080f7d40"/>
+        <function-ref name="setPIOPPUDR" scoped="" ref="0x1080f6020"/>
+        <function-ref name="setPIOOER" scoped="" ref="0x1080f61a8"/>
+        <function-ref name="setPIOSODR" scoped="" ref="0x1080f6330"/>
+        <function-ref name="setPIOMDER" scoped="" ref="0x1080f64b8"/>
+        <function-ref name="setPIOASR" scoped="" ref="0x1080f6640"/>
+      </interface-functions>
+    </interface>
+  </interfaces>
+  <interfacedefs>
+    <interfacedef qname="Init" loc="51:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/Init.nc">
+      <documentation loc="34:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/types/TinyError.h">
+        <short>&#10; </short>
+        <long>&#10; @author Phil Levis&#10; @author David Gay&#10; Revision:  $Revision: 1.12 $&#10;&#10; Defines global error codes for error_t in TinyOS.&#10;</long>
+      </documentation>
+      <function command="" provided="0" name="init" ref="0x107d87660" loc="62:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/Init.nc">
+        <documentation loc="53:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/Init.nc">
+          <short>&#10; Initialize this component.</short>
+          <long>&#10; Initialize this component. Initialization should not assume that&#10; any component is running: init() cannot call any commands besides&#10; those that initialize other components.  &#10; &#10; @return SUCCESS if initialized properly, FAIL otherwise.&#10; @see TEP 107: Boot Sequence&#10;&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="Init"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+            <typename><typedef-ref name="error_t" ref="0x10796a5d8"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+    </interfacedef>
+    <interfacedef qname="Boot" loc="50:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/Boot.nc">
+      <documentation loc="42:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/Boot.nc">
+        <short>&#10; Interface that notifies components when TinyOS has booted&#10; (initialized all of its components), as discussed in TEP 107.</short>
+        <long>&#10; Interface that notifies components when TinyOS has booted&#10; (initialized all of its components), as discussed in TEP 107.&#10;&#10; @author Philip Levis&#10; @date   January 5 2005&#10;</long>
+      </documentation>
+      <function event="" provided="0" name="booted" ref="0x107d88328" loc="60:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/Boot.nc">
+        <documentation loc="51:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/Boot.nc">
+          <short>&#10; Signaled when the system has booted successfully.</short>
+          <long>&#10; Signaled when the system has booted successfully. Components can&#10; assume the system has been initialized properly. Services may&#10; need to be started to work, however.&#10;&#10; @see StdControl&#10; @see SplitConrol&#10; @see TEP 107: Boot Sequence&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="Boot"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+    </interfacedef>
+    <interfacedef qname="HplAT91Interrupt" loc="9:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/HplAT91Interrupt.nc">
+      <documentation loc="5:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/HplAT91Interrupt.nc">
+        <short>&#10; at91 interrupt mapping&#10;</short>
+      </documentation>
+      <function event="" provided="0" name="fired" ref="0x107d9c718" loc="29:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/HplAT91Interrupt.nc">
+        <documentation loc="26:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/HplAT91Interrupt.nc">
+          <short>&#10; The peripheral interrupt event.</short>
+          <long>&#10; The peripheral interrupt event.&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="HplAT91Interrupt"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="disable" ref="0x107d9c020" loc="24:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/HplAT91Interrupt.nc">
+        <documentation loc="21:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/HplAT91Interrupt.nc">
+          <short>&#10; Disables a peripheral interrupt.</short>
+          <long>&#10; Disables a peripheral interrupt.&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="HplAT91Interrupt"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="enable" ref="0x107d9d848" loc="19:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/HplAT91Interrupt.nc">
+        <documentation loc="16:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/HplAT91Interrupt.nc">
+          <short>&#10; Enables a periperhal interrupt.</short>
+          <long>&#10; Enables a periperhal interrupt.&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="HplAT91Interrupt"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="allocate" ref="0x107d9d178" loc="14:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/HplAT91Interrupt.nc">
+        <documentation loc="11:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/HplAT91Interrupt.nc">
+          <short> &#10; Allocates interrupts&#10;</short>
+        </documentation>
+        <interfacedef-ref qname="HplAT91Interrupt"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+            <typename><typedef-ref name="error_t" ref="0x10796a5d8"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+    </interfacedef>
+    <interfacedef qname="HplAT91Pit" loc="6:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/timer/HplAT91Pit.nc">
+      <documentation loc="1:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/timer/HplAT91Pit.nc">
+        <short>&#10; Periodic Interval Timer Interface.</short>
+        <long>&#10; Periodic Interval Timer Interface.&#10; @author Rasmus Pedersen&#10;</long>
+      </documentation>
+      <function event="" provided="0" name="fired" ref="0x107dd2880" loc="22:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/timer/HplAT91Pit.nc">
+        <documentation loc="18:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/timer/HplAT91Pit.nc">
+          <short>&#10; Fired.</short>
+          <long>&#10; Fired. The event handler must call getPITSR() in this interface.&#10; It will clear the status register.&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="HplAT91Pit"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="getPITMR" ref="0x107dd4328" loc="8:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/timer/HplAT91Pit.nc">
+        <interfacedef-ref qname="HplAT91Pit"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+            <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="setPITMR" ref="0x107dd4c20" loc="10:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/timer/HplAT91Pit.nc">
+        <interfacedef-ref qname="HplAT91Pit"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="val" ref="0x107dd49b0" loc="10:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/timer/HplAT91Pit.nc">
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="getPITPIVR" ref="0x107dd3a70" loc="14:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/timer/HplAT91Pit.nc">
+        <interfacedef-ref qname="HplAT91Pit"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+            <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function event="" provided="0" name="firedTask" ref="0x107dd0290" loc="32:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/timer/HplAT91Pit.nc">
+        <documentation loc="24:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/timer/HplAT91Pit.nc">
+          <short> &#10; Same as fired, but signalled from a task (posted by the fired event().</short>
+          <long> &#10; Same as fired, but signalled from a task (posted by the fired event().&#10; If this event is used then it is not necessary to post a task in the signalled&#10; component to get sync code.&#10; @param taskMiss   how many times fired failed to post the task that signals&#10;                   firedTask(). Would mean that &#34;something&#34; is taking longer&#10;                   than 1 ms somewhere in the system without giving up control.&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="HplAT91Pit"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="taskMiss" ref="0x107dd0020" loc="32:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/timer/HplAT91Pit.nc">
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="getPITPIIR" ref="0x107dd21d8" loc="16:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/timer/HplAT91Pit.nc">
+        <interfacedef-ref qname="HplAT91Pit"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+            <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="getPITSR" ref="0x107dd3360" loc="12:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/timer/HplAT91Pit.nc">
+        <interfacedef-ref qname="HplAT91Pit"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+            <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+    </interfacedef>
+    <interfacedef qname="TaskBasic" loc="55:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/TaskBasic.nc">
+      <function command="" provided="0" name="postTask" ref="0x107975a38" loc="67:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/TaskBasic.nc">
+        <documentation loc="57:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/TaskBasic.nc">
+          <short>&#10; Post this task to the TinyOS scheduler.</short>
+          <long>&#10; Post this task to the TinyOS scheduler. At some later time,&#10; depending on the scheduling policy, the scheduler will signal the&#10; &#60;tt>run()&#60;/tt> event. &#10;&#10; @return SUCCESS if task was successfuly&#10; posted; the semantics of a non-SUCCESS return value depend on the&#10; implementation of this interface (the class of task).&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="TaskBasic"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+            <typename><typedef-ref name="error_t" ref="0x10796a5d8"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function event="" provided="0" name="runTask" ref="0x107973258" loc="75:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/TaskBasic.nc">
+        <documentation loc="69:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/TaskBasic.nc">
+          <short>&#10; Event from the scheduler to run this task.</short>
+          <long>&#10; Event from the scheduler to run this task. Following the TinyOS&#10; concurrency model, the codes invoked from &#60;tt>run()&#60;/tt> signals&#10; execute atomically with respect to one another, but can be&#10; preempted by async commands/events.&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="TaskBasic"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+    </interfacedef>
+    <interfacedef qname="Scheduler" loc="52:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/Scheduler.nc">
+      <documentation loc="42:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/Scheduler.nc">
+        <short> &#10; The interface to a TinyOS task scheduler.</short>
+        <long> &#10; The interface to a TinyOS task scheduler.&#10;&#10; @author Philip Levis&#10; @date   January 19 2005&#10; @see TEP 106: Tasks and Schedulers&#10; @see TEP 107: Boot Sequence&#10;</long>
+      </documentation>
+      <function command="" provided="0" name="init" ref="0x107613d90" loc="57:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/Scheduler.nc">
+        <documentation loc="54:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/Scheduler.nc">
+          <short> &#10; Initialize the scheduler.</short>
+        </documentation>
+        <interfacedef-ref qname="Scheduler"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="taskLoop" ref="0x107962c58" loc="72:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/Scheduler.nc">
+        <documentation loc="67:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/Scheduler.nc">
+          <short>&#10; Enter an infinite task-running loop.</short>
+          <long>&#10; Enter an infinite task-running loop. Put the MCU into a low power&#10; state when the processor is idle (task queue empty, waiting for&#10; interrupts). This call never returns.&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="Scheduler"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="runNextTask" ref="0x1079624b8" loc="65:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/Scheduler.nc">
+        <documentation loc="59:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/Scheduler.nc">
+          <short> &#10; Run the next task if one is waiting, otherwise return immediately.</short>
+          <long> &#10; Run the next task if one is waiting, otherwise return immediately. &#10;&#10; @return        whether a task was run -- TRUE indicates a task&#10;                ran, FALSE indicates there was no task to run.&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="Scheduler"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+            <typename><typedef-ref name="bool" ref="0x107965c70"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+    </interfacedef>
+    <interfacedef qname="McuSleep" loc="74:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/McuSleep.nc">
+      <documentation loc="63:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/McuSleep.nc">
+        <short>&#10; Interface to instruct the MCU to enter a low power state.</short>
+        <long>&#10; Interface to instruct the MCU to enter a low power state. TEP112&#10; describes how an MCU computes this state and how the Scheduler uses&#10; this interface to manage system power draw.&#10; &#10; @author Philip Levis&#10; @author Martin Turon &#60;mturon@xbow.com>&#10; @date   Oct 26, 2005&#10;&#10;</long>
+      </documentation>
+      <function command="" provided="0" name="sleep" ref="0x107d4c3e0" loc="76:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/McuSleep.nc">
+        <documentation loc="75:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/McuSleep.nc">
+          <short> Called by the scheduler to put the MCU to sleep.</short>
+          <long> Called by the scheduler to put the MCU to sleep. *</long>
+        </documentation>
+        <interfacedef-ref qname="McuSleep"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+    </interfacedef>
+    <interfacedef qname="McuPowerState" loc="46:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/McuPowerState.nc">
+      <documentation loc="35:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/McuPowerState.nc">
+        <short>&#10; Interface to instruct TinyOS that the low-power state of the MCU&#10; may have changed.</short>
+        <long>&#10; Interface to instruct TinyOS that the low-power state of the MCU&#10; may have changed. TEP 112 describes how an MCU computes this state&#10; and how the Scheduler uses this interface to manage system power&#10; draw.&#10; &#10; @author Philip Levis&#10; @date   Oct 26, 2005&#10; @see    TEP 112: Microcontroller Power Management&#10;</long>
+      </documentation>
+      <function command="" provided="0" name="update" ref="0x107d71258" loc="52:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/McuPowerState.nc">
+        <documentation loc="47:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/McuPowerState.nc">
+          <short> &#10; Called by any component to tell TinyOS that the MCU low&#10; power state may have changed.</short>
+          <long> &#10; Called by any component to tell TinyOS that the MCU low&#10; power state may have changed. Generally, this should be&#10; called whenever a peripheral/timer is started/stopped. &#10;</long>
+        </documentation>
+        <interfacedef-ref qname="McuPowerState"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+    </interfacedef>
+    <interfacedef qname="I2CPacket" loc="59:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/I2CPacket.nc">
+      <documentation loc="32:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/types/I2C.h">
+        <short>&#10; </short>
+        <long>&#10; @author Phil Buonadonna&#10; @author Philip Levis&#10;</long>
+      </documentation>
+      <parameters>
+        <typedef name="addr_size" ref="0x107f2ee60" loc="59:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/I2CPacket.nc">
+          <interfacedef-ref qname="I2CPacket"/>
+          <type-var size="U:" alignment="U:"><typedef-ref name="addr_size" scoped="" ref="0x107f2ee60"/></type-var>
+        </typedef>
+      </parameters>
+      <function command="" provided="0" name="read" ref="0x107f4f3a0" loc="76:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/I2CPacket.nc">
+        <documentation loc="60:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/I2CPacket.nc">
+          <short>&#10; Perform an I2C read operation&#10;&#10; </short>
+          <long>&#10; Perform an I2C read operation&#10;&#10; @param flags Flags that may be logical ORed and defined by:&#10;    I2C_START   - The START condition is transmitted at the beginning &#10;                   of the packet if set.&#10;    I2C_STOP    - The STOP condition is transmitted at the end of the &#10;                   packet if set.&#10;    I2C_ACK_END - ACK the last byte if set. Otherwise NACK last byte. This&#10;                   flag cannot be used with the I2C_STOP flag.&#10; @param addr The slave device address. Only used if I2C_START is set.&#10; @param length Length, in bytes, to be read&#10; @param 'uint8_t* COUNT(length) data' A point to a data buffer to read into&#10;&#10; @return SUCCESS if bus available and request accepted. &#10;</long>
+        </documentation>
+        <interfacedef-ref qname="I2CPacket"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+            <typename><typedef-ref name="error_t" ref="0x10796a5d8"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="i2c_flags_t" ref="0x107de8cc0"/></typename>
+            </type-int>
+            <type-int cname="unsigned short" unsigned="" size="I:2" alignment="I:2">
+              <typename><typedef-ref name="uint16_t" ref="0x107623af0"/></typename>
+            </type-int>
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+            </type-int>
+            <type-pointer size="I:4" alignment="I:4">
+              <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+                <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+              </type-int>
+            </type-pointer>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="flags" ref="0x107f50718" loc="76:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/I2CPacket.nc">
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="i2c_flags_t" ref="0x107de8cc0"/></typename>
+            </type-int>
+          </variable>
+          <variable name="addr" ref="0x107f50a48" loc="76:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/I2CPacket.nc">
+            <type-int cname="unsigned short" unsigned="" size="I:2" alignment="I:2">
+              <typename><typedef-ref name="uint16_t" ref="0x107623af0"/></typename>
+            </type-int>
+          </variable>
+          <variable name="length" ref="0x107f50d78" loc="76:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/I2CPacket.nc">
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+            </type-int>
+          </variable>
+          <variable name="data" ref="0x107f4f100" loc="76:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/I2CPacket.nc">
+            <type-pointer size="I:4" alignment="I:4">
+              <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+                <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+              </type-int>
+            </type-pointer>
+          </variable>
+        </parameters>
+      </function>
+      <function event="" provided="0" name="writeDone" ref="0x107f4a948" loc="112:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/I2CPacket.nc">
+        <documentation loc="104:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/I2CPacket.nc">
+          <short>&#10; Notification that the write operation has completed&#10;&#10; </short>
+          <long>&#10; Notification that the write operation has completed&#10;&#10; @param addr The slave device address&#10; @param length Length, in bytes, written&#10; @param 'uint8_t* COUNT(length) data' Pointer to the data buffer written&#10; @param success SUCCESS if transfer completed without error.&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="I2CPacket"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="error_t" ref="0x10796a5d8"/></typename>
+            </type-int>
+            <type-int cname="unsigned short" unsigned="" size="I:2" alignment="I:2">
+              <typename><typedef-ref name="uint16_t" ref="0x107623af0"/></typename>
+            </type-int>
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+            </type-int>
+            <type-pointer size="I:4" alignment="I:4">
+              <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+                <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+              </type-int>
+            </type-pointer>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="error" ref="0x107f49bc8" loc="112:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/I2CPacket.nc">
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="error_t" ref="0x10796a5d8"/></typename>
+            </type-int>
+          </variable>
+          <variable name="addr" ref="0x107f4a020" loc="112:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/I2CPacket.nc">
+            <type-int cname="unsigned short" unsigned="" size="I:2" alignment="I:2">
+              <typename><typedef-ref name="uint16_t" ref="0x107623af0"/></typename>
+            </type-int>
+          </variable>
+          <variable name="length" ref="0x107f4a350" loc="112:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/I2CPacket.nc">
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+            </type-int>
+          </variable>
+          <variable name="data" ref="0x107f4a6a8" loc="112:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/I2CPacket.nc">
+            <type-pointer size="I:4" alignment="I:4">
+              <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+                <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+              </type-int>
+            </type-pointer>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="write" ref="0x107f4d0d8" loc="92:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/I2CPacket.nc">
+        <documentation loc="78:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/I2CPacket.nc">
+          <short>&#10; Perform an I2C write operation&#10;&#10; </short>
+          <long>&#10; Perform an I2C write operation&#10;&#10; @param flags Flags that may be logical ORed and defined by:&#10;    I2C_START   - The START condition is transmitted at the beginning &#10;                   of the packet if set.&#10;    I2C_STOP    - The STOP condition is transmitted at the end of the &#10;                   packet if set.&#10; @param addr The slave device address. Only used if I2C_START is set.&#10; @param length Length, in bytes, to be read&#10; @param 'uint8_t* COUNT(length) data' A point to a data buffer to read into&#10;&#10; @return SUCCESS if bus available and request accepted. &#10;</long>
+        </documentation>
+        <interfacedef-ref qname="I2CPacket"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+            <typename><typedef-ref name="error_t" ref="0x10796a5d8"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="i2c_flags_t" ref="0x107de8cc0"/></typename>
+            </type-int>
+            <type-int cname="unsigned short" unsigned="" size="I:2" alignment="I:2">
+              <typename><typedef-ref name="uint16_t" ref="0x107623af0"/></typename>
+            </type-int>
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+            </type-int>
+            <type-pointer size="I:4" alignment="I:4">
+              <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+                <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+              </type-int>
+            </type-pointer>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="flags" ref="0x107f4e428" loc="92:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/I2CPacket.nc">
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="i2c_flags_t" ref="0x107de8cc0"/></typename>
+            </type-int>
+          </variable>
+          <variable name="addr" ref="0x107f4e758" loc="92:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/I2CPacket.nc">
+            <type-int cname="unsigned short" unsigned="" size="I:2" alignment="I:2">
+              <typename><typedef-ref name="uint16_t" ref="0x107623af0"/></typename>
+            </type-int>
+          </variable>
+          <variable name="length" ref="0x107f4ea88" loc="92:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/I2CPacket.nc">
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+            </type-int>
+          </variable>
+          <variable name="data" ref="0x107f4ede0" loc="92:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/I2CPacket.nc">
+            <type-pointer size="I:4" alignment="I:4">
+              <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+                <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+              </type-int>
+            </type-pointer>
+          </variable>
+        </parameters>
+      </function>
+      <function event="" provided="0" name="readDone" ref="0x107f4bd20" loc="102:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/I2CPacket.nc">
+        <documentation loc="94:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/I2CPacket.nc">
+          <short>&#10; Notification that the read operation has completed&#10;&#10; </short>
+          <long>&#10; Notification that the read operation has completed&#10;&#10; @param addr The slave device address&#10; @param length Length, in bytes, read&#10; @param 'uint8_t* COUNT(length) data' Pointer to the received data buffer&#10; @param success SUCCESS if transfer completed without error.&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="I2CPacket"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="error_t" ref="0x10796a5d8"/></typename>
+            </type-int>
+            <type-int cname="unsigned short" unsigned="" size="I:2" alignment="I:2">
+              <typename><typedef-ref name="uint16_t" ref="0x107623af0"/></typename>
+            </type-int>
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+            </type-int>
+            <type-pointer size="I:4" alignment="I:4">
+              <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+                <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+              </type-int>
+            </type-pointer>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="error" ref="0x107f4b0c8" loc="102:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/I2CPacket.nc">
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="error_t" ref="0x10796a5d8"/></typename>
+            </type-int>
+          </variable>
+          <variable name="addr" ref="0x107f4b3f8" loc="102:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/I2CPacket.nc">
+            <type-int cname="unsigned short" unsigned="" size="I:2" alignment="I:2">
+              <typename><typedef-ref name="uint16_t" ref="0x107623af0"/></typename>
+            </type-int>
+          </variable>
+          <variable name="length" ref="0x107f4b728" loc="102:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/I2CPacket.nc">
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+            </type-int>
+          </variable>
+          <variable name="data" ref="0x107f4ba80" loc="102:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/I2CPacket.nc">
+            <type-pointer size="I:4" alignment="I:4">
+              <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+                <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+              </type-int>
+            </type-pointer>
+          </variable>
+        </parameters>
+      </function>
+    </interfacedef>
+    <interfacedef qname="HalLCD" loc="34:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HalLCD.nc">
+      <documentation loc="30:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HalLCD.nc">
+        <short>&#10; UC1601 Display Interface&#10; </short>
+        <long>&#10; UC1601 Display Interface&#10; @author Rasmus Ulslev Pedersen&#10;</long>
+      </documentation>
+      <function command="" provided="0" name="displayString" ref="0x107f40668" loc="41:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HalLCD.nc">
+        <documentation loc="35:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HalLCD.nc">
+          <short>&#10; Display a string on a line in the display.</short>
+          <long>&#10; Display a string on a line in the display.&#10; &#10; @param str  String to display (max. 16 characters can be shown).&#10; @param line There are 8 lines in the display: 0 to 7.  &#10;</long>
+        </documentation>
+        <interfacedef-ref qname="HalLCD"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+            <typename><typedef-ref name="error_t" ref="0x10796a5d8"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer size="I:4" alignment="I:4">
+              <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+                <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+              </type-int>
+            </type-pointer>
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="str" ref="0x107f400c8" loc="41:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HalLCD.nc">
+            <type-pointer size="I:4" alignment="I:4">
+              <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+                <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+              </type-int>
+            </type-pointer>
+          </variable>
+          <variable name="line" ref="0x107f403e8" loc="41:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HalLCD.nc">
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="displayStringFast" ref="0x107f65448" loc="44:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HalLCD.nc">
+        <interfacedef-ref qname="HalLCD"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+            <typename><typedef-ref name="error_t" ref="0x10796a5d8"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer size="I:4" alignment="I:4">
+              <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+                <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+              </type-int>
+            </type-pointer>
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="str" ref="0x107f40e80" loc="44:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HalLCD.nc">
+            <type-pointer size="I:4" alignment="I:4">
+              <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+                <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+              </type-int>
+            </type-pointer>
+          </variable>
+          <variable name="line" ref="0x107f651c8" loc="44:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HalLCD.nc">
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+    </interfacedef>
+    <interfacedef qname="HplAT91_GPIOPin" loc="5:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/HplAT91_GPIOPin.nc">
+      <documentation loc="1:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/HplAT91_GPIOPin.nc">
+        <short>&#10; Adapted for nxtmote.</short>
+        <long>&#10; Adapted for nxtmote.&#10; @author Rasmus Pedersen&#10;</long>
+      </documentation>
+      <function command="" provided="0" name="getPIOPDSR" ref="0x107f7e070" loc="12:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/HplAT91_GPIOPin.nc">
+        <interfacedef-ref qname="HplAT91_GPIOPin"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+            <typename><typedef-ref name="bool" ref="0x107965c70"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="setPIOPDR" ref="0x107f7edd0" loc="15:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/HplAT91_GPIOPin.nc">
+        <interfacedef-ref qname="HplAT91_GPIOPin"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="setPIOCODR" ref="0x107f7f290" loc="10:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/HplAT91_GPIOPin.nc">
+        <interfacedef-ref qname="HplAT91_GPIOPin"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function event="" provided="0" name="interruptGPIOPin" ref="0x107f7b2a8" loc="19:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/HplAT91_GPIOPin.nc">
+        <interfacedef-ref qname="HplAT91_GPIOPin"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="setPIOPER" ref="0x107f814e8" loc="8:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/HplAT91_GPIOPin.nc">
+        <interfacedef-ref qname="HplAT91_GPIOPin"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="setPIOPPUDR" ref="0x107f7db78" loc="17:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/HplAT91_GPIOPin.nc">
+        <interfacedef-ref qname="HplAT91_GPIOPin"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="setPIOOER" ref="0x107f81b98" loc="9:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/HplAT91_GPIOPin.nc">
+        <interfacedef-ref qname="HplAT91_GPIOPin"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="setPIOSODR" ref="0x107f7f948" loc="11:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/HplAT91_GPIOPin.nc">
+        <interfacedef-ref qname="HplAT91_GPIOPin"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="setPIOMDER" ref="0x107f7d4b8" loc="16:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/HplAT91_GPIOPin.nc">
+        <interfacedef-ref qname="HplAT91_GPIOPin"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="setPIOASR" ref="0x107f7e720" loc="14:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/HplAT91_GPIOPin.nc">
+        <interfacedef-ref qname="HplAT91_GPIOPin"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+    </interfacedef>
+    <interfacedef qname="HplAT91I2C" loc="36:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2C.nc">
+      <documentation loc="30:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2C.nc">
+        <short>&#10; The AT91 I2C HPL interface.</short>
+        <long>&#10; The AT91 I2C HPL interface. &#10; See pages 287-303 in the At91SAM7S Series Preliminary&#10; @author Rasmus Ulslev Pedersen&#10;</long>
+      </documentation>
+      <function command="" provided="0" name="setTWIMMR" ref="0x107f95cb8" loc="60:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2C.nc">
+        <documentation loc="52:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2C.nc">
+          <short>&#10; Set TWI master mode register.</short>
+          <long>&#10; Set TWI master mode register.&#10;&#10; @param val :&#10;    AT91C_TWI_DADR   - Device address&#10;    AT91C_TWI_MREAD  - Master read direction&#10;    AT91C_TWI_IADRSZ - Internal Device Address (0 means no internal device addr.)&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="HplAT91I2C"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="val" ref="0x107f95a48" loc="60:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2C.nc">
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="setTWIIDR" ref="0x107f90020" loc="117:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2C.nc">
+        <documentation loc="108:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2C.nc">
+          <short>&#10; Set TWI interrupt disable register.</short>
+          <long>&#10; Set TWI interrupt disable register.&#10;&#10; @param val :&#10;    AT91C_TWI_TXCOMP - Transmission completed&#10;    AT91C_TWI_RXRDY  - Receive holding register ready&#10;    AT91C_TWI_TXRDY  - Transmit holding register ready&#10;    AT91C_TWI_NACK   - Not acknowledge &#10;</long>
+        </documentation>
+        <interfacedef-ref qname="HplAT91I2C"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="val" ref="0x107f91cb0" loc="117:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2C.nc">
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="setTWIIER" ref="0x107f914e0" loc="106:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2C.nc">
+        <documentation loc="97:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2C.nc">
+          <short>&#10; Set TWI interrupt enable register.</short>
+          <long>&#10; Set TWI interrupt enable register.&#10;&#10; @param val :&#10;    AT91C_TWI_TXCOMP - Transmission completed&#10;    AT91C_TWI_RXRDY  - Receive holding register ready&#10;    AT91C_TWI_TXRDY  - Transmit holding register ready&#10;    AT91C_TWI_NACK   - Not acknowledge &#10;</long>
+        </documentation>
+        <interfacedef-ref qname="HplAT91I2C"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="val" ref="0x107f91270" loc="106:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2C.nc">
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="setTWICR" ref="0x107f946f8" loc="72:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2C.nc">
+        <documentation loc="62:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2C.nc">
+          <short>&#10; Set TWI control register.</short>
+          <long>&#10; Set TWI control register.&#10;&#10; @param val :&#10;    AT91C_TWI_START - Send a start condition&#10;    AT91C_TWI_STOP  - Send a stop condition&#10;    AT91C_TWI_MSEN  - Master transfer enabled&#10;    AT91C_TWI_MSDIS - Master Transfer disabled&#10;    AT91C_TWI_SWRST - Software reset&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="HplAT91I2C"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="val" ref="0x107f94488" loc="72:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2C.nc">
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="getTWISR" ref="0x107f93020" loc="85:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2C.nc">
+        <documentation loc="74:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2C.nc">
+          <short>&#10; Set TWI status register.</short>
+          <long>&#10; Set TWI status register.&#10;&#10; @param val :&#10;    AT91C_TWI_TXCOMP - Transmission completed&#10;    AT91C_TWI_RXRDY  - Receive holding register ready&#10;    AT91C_TWI_TXDRY  - Transmit holding register ready&#10;    AT91C_TWI_NACK   - Not acknowledged&#10;    AT91C_TWI_OVRE   - Overrun Error&#10;    AT91C_TWI_UNRE   - Underrun Error&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="HplAT91I2C"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+            <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="getTWIRHR" ref="0x107f95328" loc="50:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2C.nc">
+        <documentation loc="45:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2C.nc">
+          <short>&#10; Get TWI receive holding register.</short>
+          <long>&#10; Get TWI receive holding register.&#10;&#10; @return val The received byte.&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="HplAT91I2C"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+            <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="setTWICWGR" ref="0x107f93aa8" loc="95:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2C.nc">
+        <documentation loc="87:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2C.nc">
+          <short>&#10; Set TWI clock waveform generator register.</short>
+          <long>&#10; Set TWI clock waveform generator register.&#10;&#10; @param val :&#10;    AT91C_TWI_CLDIV  - Clock low divider&#10;    AT91C_TWI_CHDIV  - Clock high divider&#10;    AT91C_TWI_CKDIV  - Clock divider&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="HplAT91I2C"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="val" ref="0x107f93838" loc="95:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2C.nc">
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function event="" provided="0" name="interruptI2C" ref="0x107f90838" loc="122:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2C.nc">
+        <documentation loc="119:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2C.nc">
+          <short>&#10; Notification for an i2c event.</short>
+          <long>&#10; Notification for an i2c event.&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="HplAT91I2C"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="setTWITHR" ref="0x107f98af0" loc="43:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2C.nc">
+        <documentation loc="38:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2C.nc">
+          <short>&#10; Set TWI transmit holding register.</short>
+          <long>&#10; Set TWI transmit holding register.&#10;&#10; @param val The byte to transmit in bit 7:0.&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="HplAT91I2C"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="val" ref="0x107f98880" loc="43:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/i2c/HplAT91I2C.nc">
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+    </interfacedef>
+    <interfacedef qname="HplUC1601LCD" loc="34:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HplUC1601LCD.nc">
+      <documentation loc="30:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HplUC1601LCD.nc">
+        <short>&#10; UC1601 Display Interface&#10; </short>
+        <long>&#10; UC1601 Display Interface&#10; @author Rasmus Ulslev Pedersen&#10;</long>
+      </documentation>
+      <function command="" provided="0" name="writefast" ref="0x108046b30" loc="54:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HplUC1601LCD.nc">
+        <interfacedef-ref qname="HplUC1601LCD"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+            <typename><typedef-ref name="error_t" ref="0x10796a5d8"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer size="I:4" alignment="I:4">
+              <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+                <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+              </type-int>
+            </type-pointer>
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+            </type-int>
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="data" ref="0x108046270" loc="54:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HplUC1601LCD.nc">
+            <type-pointer size="I:4" alignment="I:4">
+              <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+                <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+              </type-int>
+            </type-pointer>
+          </variable>
+          <variable name="len" ref="0x108046580" loc="54:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HplUC1601LCD.nc">
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+            </type-int>
+          </variable>
+          <variable name="line" ref="0x1080468a0" loc="54:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HplUC1601LCD.nc">
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="write" ref="0x108047988" loc="52:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HplUC1601LCD.nc">
+        <documentation loc="41:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HplUC1601LCD.nc">
+          <short>&#10; Send (pixel) data to a line on the LCD.</short>
+          <long>&#10; Send (pixel) data to a line on the LCD.&#10;&#10; @param data     The data to write to a line. A line is 100&#10;                 bytes wide. The bits in the first byte controls&#10;                 the first 8 vertical pixels and so on.&#10; @param len      The length of the data (max. 100 on one line)&#10; @param line     The line to write to which can be 0 to 7.&#10;&#10; @return error_t Return FAIL if unable to send.&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="HplUC1601LCD"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+            <typename><typedef-ref name="error_t" ref="0x10796a5d8"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer size="I:4" alignment="I:4">
+              <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+                <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+              </type-int>
+            </type-pointer>
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+            </type-int>
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="data" ref="0x1080470c8" loc="52:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HplUC1601LCD.nc">
+            <type-pointer size="I:4" alignment="I:4">
+              <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+                <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+              </type-int>
+            </type-pointer>
+          </variable>
+          <variable name="len" ref="0x1080473d8" loc="52:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HplUC1601LCD.nc">
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+            </type-int>
+          </variable>
+          <variable name="line" ref="0x1080476f8" loc="52:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HplUC1601LCD.nc">
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="initLCD" ref="0x10804a938" loc="39:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HplUC1601LCD.nc">
+        <documentation loc="35:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/uc1601/HplUC1601LCD.nc">
+          <short>&#10; Send init string to LCD.</short>
+          <long>&#10; Send init string to LCD. Not the same as Init.init() that is used &#10; for SPI initialization.&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="HplUC1601LCD"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+    </interfacedef>
+    <interfacedef qname="HalAT91SPICntl" loc="36:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HalAT91SPICntl.nc">
+      <documentation loc="30:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/SPI.h">
+        <short>&#10;&#10; </short>
+        <long>&#10;&#10; @author Kaisen Lin&#10; @author Phil Buonadonna&#10;</long>
+      </documentation>
+      <function command="" provided="0" name="setSPIParams" ref="0x108056958" loc="44:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HalAT91SPICntl.nc">
+        <documentation loc="39:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HalAT91SPICntl.nc">
+          <short>&#10;Set the SPI params.</short>
+          <long>&#10;Set the SPI params.&#10;&#10;@return FAIL if error, SUCCESS otherwise&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="HalAT91SPICntl"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+            <typename><typedef-ref name="error_t" ref="0x10796a5d8"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+    </interfacedef>
+    <interfacedef qname="SpiPacket" loc="54:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/SpiPacket.nc">
+      <documentation loc="35:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/SpiPacket.nc">
+        <short>&#10; SPI Packet/buffer interface for sending data over an SPI bus.</short>
+        <long>&#10; SPI Packet/buffer interface for sending data over an SPI bus.  This&#10; interface provides a split-phase send command which can be used for&#10; sending, receiving or both. It is a &#34;send&#34; command because reading&#10; from the SPI requires writing bytes. The send call allows NULL&#10; parameters for receive or send only operations. This interface is&#10; for buffer based transfers where the microcontroller is the master&#10; (clocking) device.&#10;&#10; Often, an SPI bus must first be acquired using a Resource interface&#10; before sending commands with SPIPacket. In the case of multiple&#10; devices attached to a single SPI bus, chip select pins are often also&#10; used.&#10;&#10; @author Philip Levis&#10; @author Jonathan Hui&#10; @author Joe Polastre&#10; Revision:  $Revision: 1.8 $&#10;</long>
+      </documentation>
+      <function command="" provided="0" name="send" ref="0x10807c930" loc="70:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/SpiPacket.nc">
+        <documentation loc="56:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/SpiPacket.nc">
+          <short>&#10; Send a message over the SPI bus.</short>
+          <long>&#10; Send a message over the SPI bus.&#10;&#10; @param 'uint8_t* COUNT_NOK(len) txBuf' A pointer to the buffer to send over the bus. If this&#10;              parameter is NULL, then the SPI will send zeroes.&#10; @param 'uint8_t* COUNT_NOK(len) rxBuf' A pointer to the buffer where received data should&#10;              be stored. If this parameter is NULL, then the SPI will&#10;              discard incoming bytes.&#10; @param len   Length of the message.  Note that non-NULL rxBuf and txBuf&#10;              parameters must be AT LEAST as large as len, or the SPI&#10;              will overflow a buffer.&#10;&#10; @return SUCCESS if the request was accepted for transfer&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="SpiPacket"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+            <typename><typedef-ref name="error_t" ref="0x10796a5d8"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer size="I:4" alignment="I:4">
+              <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+                <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+              </type-int>
+            </type-pointer>
+            <type-pointer size="I:4" alignment="I:4">
+              <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+                <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+              </type-int>
+            </type-pointer>
+            <type-int cname="unsigned short" unsigned="" size="I:2" alignment="I:2">
+              <typename><typedef-ref name="uint16_t" ref="0x107623af0"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="txBuf" ref="0x10807c020" loc="70:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/SpiPacket.nc">
+            <type-pointer size="I:4" alignment="I:4">
+              <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+                <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+              </type-int>
+            </type-pointer>
+          </variable>
+          <variable name="rxBuf" ref="0x10807c380" loc="70:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/SpiPacket.nc">
+            <type-pointer size="I:4" alignment="I:4">
+              <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+                <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+              </type-int>
+            </type-pointer>
+          </variable>
+          <variable name="len" ref="0x10807c6a0" loc="70:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/SpiPacket.nc">
+            <type-int cname="unsigned short" unsigned="" size="I:2" alignment="I:2">
+              <typename><typedef-ref name="uint16_t" ref="0x107623af0"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function event="" provided="0" name="sendDone" ref="0x10807bcc8" loc="82:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/SpiPacket.nc">
+        <documentation loc="72:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/SpiPacket.nc">
+          <short>&#10; Notification that the send command has completed.</short>
+          <long>&#10; Notification that the send command has completed.&#10;&#10; @param 'uint8_t* COUNT_NOK(len) txBuf' The buffer used for transmission&#10; @param 'uint8_t* COUNT_NOK(len) rxBuf' The buffer used for reception&#10; @param len    The request length of the transfer, but not necessarily&#10;               the number of bytes that were actually transferred&#10; @param error  SUCCESS if the operation completed successfully, FAIL&#10;               otherwise&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="SpiPacket"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+            <type-pointer size="I:4" alignment="I:4">
+              <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+                <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+              </type-int>
+            </type-pointer>
+            <type-pointer size="I:4" alignment="I:4">
+              <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+                <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+              </type-int>
+            </type-pointer>
+            <type-int cname="unsigned short" unsigned="" size="I:2" alignment="I:2">
+              <typename><typedef-ref name="uint16_t" ref="0x107623af0"/></typename>
+            </type-int>
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="error_t" ref="0x10796a5d8"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="txBuf" ref="0x10807b060" loc="82:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/SpiPacket.nc">
+            <type-pointer size="I:4" alignment="I:4">
+              <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+                <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+              </type-int>
+            </type-pointer>
+          </variable>
+          <variable name="rxBuf" ref="0x10807b3c0" loc="82:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/SpiPacket.nc">
+            <type-pointer size="I:4" alignment="I:4">
+              <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+                <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+              </type-int>
+            </type-pointer>
+          </variable>
+          <variable name="len" ref="0x10807b6e0" loc="82:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/SpiPacket.nc">
+            <type-int cname="unsigned short" unsigned="" size="I:2" alignment="I:2">
+              <typename><typedef-ref name="uint16_t" ref="0x107623af0"/></typename>
+            </type-int>
+          </variable>
+          <variable name="error" ref="0x10807ba28" loc="83:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/SpiPacket.nc">
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="error_t" ref="0x10796a5d8"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+    </interfacedef>
+    <interfacedef qname="HplAT91SPI" loc="33:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HplAT91SPI.nc">
+      <documentation loc="30:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HplAT91SPI.nc">
+        <short>&#10; </short>
+        <long>&#10; @author Rasmus Pedersen&#10;</long>
+      </documentation>
+      <function command="" provided="0" name="getSPICSR1" ref="0x10809abb8" loc="55:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HplAT91SPI.nc">
+        <interfacedef-ref qname="HplAT91SPI"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+            <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="setSPICSR2" ref="0x108097630" loc="59:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HplAT91SPI.nc">
+        <interfacedef-ref qname="HplAT91SPI"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="val" ref="0x1080973c0" loc="59:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HplAT91SPI.nc">
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="getSPIMR" ref="0x10809f328" loc="38:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HplAT91SPI.nc">
+        <interfacedef-ref qname="HplAT91SPI"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+            <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="setSPIIER" ref="0x10809c3d0" loc="46:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HplAT91SPI.nc">
+        <interfacedef-ref qname="HplAT91SPI"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="val" ref="0x10809c160" loc="46:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HplAT91SPI.nc">
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function event="" provided="0" name="interruptSPI" ref="0x108096d68" loc="64:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HplAT91SPI.nc">
+        <interfacedef-ref qname="HplAT91SPI"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="setSPICSR0" ref="0x10809a4a8" loc="53:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HplAT91SPI.nc">
+        <interfacedef-ref qname="HplAT91SPI"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="val" ref="0x10809a238" loc="53:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HplAT91SPI.nc">
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="setSPITDR" ref="0x10809ea78" loc="44:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HplAT91SPI.nc">
+        <interfacedef-ref qname="HplAT91SPI"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="val" ref="0x10809e808" loc="44:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HplAT91SPI.nc">
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="getSPICSR2" ref="0x108099d08" loc="58:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HplAT91SPI.nc">
+        <interfacedef-ref qname="HplAT91SPI"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+            <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="getSPISR" ref="0x10809fa28" loc="40:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HplAT91SPI.nc">
+        <interfacedef-ref qname="HplAT91SPI"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+            <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="getSPIRDR" ref="0x10809e178" loc="42:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HplAT91SPI.nc">
+        <interfacedef-ref qname="HplAT91SPI"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+            <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="setSPICR" ref="0x1080a0290" loc="35:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HplAT91SPI.nc">
+        <interfacedef-ref qname="HplAT91SPI"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="val" ref="0x1080a0020" loc="35:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HplAT91SPI.nc">
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="getSPIIMR" ref="0x10809b440" loc="50:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HplAT91SPI.nc">
+        <interfacedef-ref qname="HplAT91SPI"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+            <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="getSPICSR0" ref="0x10809bb50" loc="52:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HplAT91SPI.nc">
+        <interfacedef-ref qname="HplAT91SPI"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+            <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="setSPIIDR" ref="0x10809ccd0" loc="48:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HplAT91SPI.nc">
+        <interfacedef-ref qname="HplAT91SPI"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="val" ref="0x10809ca60" loc="48:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HplAT91SPI.nc">
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="setSPICSR3" ref="0x108096698" loc="62:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HplAT91SPI.nc">
+        <interfacedef-ref qname="HplAT91SPI"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="val" ref="0x108096428" loc="62:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HplAT91SPI.nc">
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="setSPICSR1" ref="0x1080994f8" loc="56:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HplAT91SPI.nc">
+        <interfacedef-ref qname="HplAT91SPI"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="val" ref="0x108099288" loc="56:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HplAT91SPI.nc">
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="getSPICSR3" ref="0x108097d40" loc="61:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HplAT91SPI.nc">
+        <interfacedef-ref qname="HplAT91SPI"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+            <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" provided="0" name="setSPIMR" ref="0x1080a0b88" loc="37:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HplAT91SPI.nc">
+        <interfacedef-ref qname="HplAT91SPI"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-void size="I:1" alignment="I:1"></type-void>
+          <function-parameters>
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="val" ref="0x1080a0918" loc="37:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/chips/at91/spi/HplAT91SPI.nc">
+            <type-int cname="unsigned long" unsigned="" size="I:4" alignment="I:4">
+              <typename><typedef-ref name="uint32_t" ref="0x107624b18"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+    </interfacedef>
+    <interfacedef qname="SpiByte" loc="38:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/SpiByte.nc">
+      <documentation loc="34:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/SpiByte.nc">
+        <short>&#10; </short>
+        <long>&#10; @author Jonathan Hui&#10; @author Joe Polastre&#10;</long>
+      </documentation>
+      <function command="" provided="0" name="write" ref="0x1080c6688" loc="45:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/SpiByte.nc">
+        <documentation loc="40:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/SpiByte.nc">
+          <short>&#10; Synchronous transmit and receive (can be in interrupt context)&#10; </short>
+          <long>&#10; Synchronous transmit and receive (can be in interrupt context)&#10; @param tx Byte to transmit&#10; @param rx Received byte is stored here.&#10;</long>
+        </documentation>
+        <interfacedef-ref qname="SpiByte"/>
+        <type-function size="I:1" alignment="I:1">
+          <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+            <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable name="tx" ref="0x1080c6418" loc="45:/Users/Xavier/Documents/tinyOS/tinyOSsourceNXT_test/tos/interfaces/SpiByte.nc">
+            <type-int cname="unsigned char" unsigned="" size="I:1" alignment="I:1">
+              <typename><typedef-ref name="uint8_t" ref="0x107622bf0"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+    </interfacedef>
+  </interfacedefs>
+  <tags>
+  </tags>
+  <variables>
+  </variables>
+  <constants>
+  </constants>
+  <functions>
+  </functions>
+  <typedefs>
+  </typedefs>
+</nesc>

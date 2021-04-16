@@ -1,0 +1,447 @@
+
+build/nxtmote/main.exe:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <SchedulerBasicP__popTask>:
+  // move the head forward
+  // if the head is at the end, mark the tail at the end, too
+  // mark the task as not in the queue
+  inline uint8_t popTask()
+  {
+    if( m_head != NO_TASK )
+   0:	e59f1030 	ldr	r1, [pc, #48]	; 38 <SchedulerBasicP__popTask+0x38>
+   4:	e5d10000 	ldrb	r0, [r1]
+   8:	e35000ff 	cmp	r0, #255	; 0xff
+   c:	012fff1e 	bxeq	lr
+    {
+      uint8_t id = m_head;
+      m_head = m_next[m_head];
+  10:	e59f3024 	ldr	r3, [pc, #36]	; 3c <SchedulerBasicP__popTask+0x3c>
+  14:	e7d32000 	ldrb	r2, [r3, r0]
+      if( m_head == NO_TASK )
+  18:	e35200ff 	cmp	r2, #255	; 0xff
+  inline uint8_t popTask()
+  {
+    if( m_head != NO_TASK )
+    {
+      uint8_t id = m_head;
+      m_head = m_next[m_head];
+  1c:	e5c12000 	strb	r2, [r1]
+      if( m_head == NO_TASK )
+      {
+	m_tail = NO_TASK;
+  20:	059f2018 	ldreq	r2, [pc, #24]	; 40 <SchedulerBasicP__popTask+0x40>
+  24:	03e01000 	mvneq	r1, #0
+  28:	05c21000 	strbeq	r1, [r2]
+      }
+      m_next[id] = NO_TASK;
+  2c:	e3e02000 	mvn	r2, #0
+  30:	e7c32000 	strb	r2, [r3, r0]
+    }
+    else
+    {
+      return NO_TASK;
+    }
+  }
+  34:	e12fff1e 	bx	lr
+	...
+
+00000044 <irqhandler>:
+//* \brief Return id of active interupt
+//*----------------------------------------------------------------------------
+__inline unsigned int AT91F_AIC_ActiveID (
+  AT91PS_AIC pAic)     // \arg pointer to the AIC registers
+{
+  return pAic->AIC_ISR;
+  44:	e3e02000 	mvn	r2, #0
+  48:	e5123ef7 	ldr	r3, [r2, #-3831]	; 0xef7
+    // Fire the sync event
+    atomic {
+      signal HplAT91Pit.firedTask(taskMiss);
+      taskMiss = 0;
+    }
+  }
+  4c:	e20330ff 	and	r3, r3, #255	; 0xff
+  async command void disable();
+
+  /**
+   * The peripheral interrupt event.
+   */
+  async event void fired();
+  50:	e3530001 	cmp	r3, #1
+  54:	112fff1e 	bxne	lr
+		uint32_t pitregtmp;
+
+    error_t taskRes;
+
+
+		if(*AT91C_PITC_PISR & AT91C_PITC_PITS){
+  58:	e51212cb 	ldr	r1, [r2, #-715]	; 0x2cb
+  5c:	e3110001 	tst	r1, #1
+  60:	012fff1e 	bxeq	lr
+			pitregtmp = *AT91C_PITC_PIVR; /*acknowledge interrupt*/
+  64:	e51222c7 	ldr	r2, [r2, #-711]	; 0x2c7
+  
+  bool isWaiting( uint8_t id )
+  {
+    return (m_next[id] != NO_TASK) || (m_tail == id);
+  68:	e59f205c 	ldr	r2, [pc, #92]	; cc <irqhandler+0x88>
+  6c:	e5d22000 	ldrb	r2, [r2]
+  70:	e35200ff 	cmp	r2, #255	; 0xff
+  74:	1a000003 	bne	88 <irqhandler+0x44>
+  78:	e59f3050 	ldr	r3, [pc, #80]	; d0 <irqhandler+0x8c>
+  7c:	e5d33000 	ldrb	r3, [r3]
+  80:	e2733001 	rsbs	r3, r3, #1
+  84:	33a03000 	movcc	r3, #0
+  }
+
+  bool pushTask( uint8_t id )
+  {
+    if( !isWaiting(id) )
+  88:	e21330ff 	ands	r3, r3, #255	; 0xff
+  8c:	1a000009 	bne	b8 <irqhandler+0x74>
+    {
+      if( m_head == NO_TASK )
+  90:	e59f103c 	ldr	r1, [pc, #60]	; d4 <irqhandler+0x90>
+  94:	e5d12000 	ldrb	r2, [r1]
+  98:	e35200ff 	cmp	r2, #255	; 0xff
+  9c:	e59f202c 	ldr	r2, [pc, #44]	; d0 <irqhandler+0x8c>
+	m_head = id;
+	m_tail = id;
+      }
+      else
+      {
+	m_next[m_tail] = id;
+  a0:	159f0024 	ldrne	r0, [pc, #36]	; cc <irqhandler+0x88>
+  a4:	15d21000 	ldrbne	r1, [r2]
+  {
+    if( !isWaiting(id) )
+    {
+      if( m_head == NO_TASK )
+      {
+	m_head = id;
+  a8:	05c13000 	strbeq	r3, [r1]
+	m_tail = id;
+      }
+      else
+      {
+	m_next[m_tail] = id;
+  ac:	17c03001 	strbne	r3, [r0, r1]
+	m_tail = id;
+  b0:	e5c23000 	strb	r3, [r2]
+  b4:	e12fff1e 	bx	lr
+			
+			// Prepare the sync PIT task
+			taskRes = post fireFromTask();
+			if(taskRes != SUCCESS){
+			  atomic {taskMiss++;}  
+  b8:	e59f3018 	ldr	r3, [pc, #24]	; d8 <irqhandler+0x94>
+  bc:	e5932000 	ldr	r2, [r3]
+  c0:	e2822001 	add	r2, r2, #1
+  c4:	e5832000 	str	r2, [r3]
+  c8:	e12fff1e 	bx	lr
+	...
+
+000000dc <__nesc_atomic_start>:
+		: "=r" (result) , "=r" (temp)
+		: "0" (result) , "1" (temp) , "i" (ARM_CPSR_INT_MASK)
+		);
+*/
+  return result;
+}
+  dc:	e3a00000 	mov	r0, #0
+  e0:	e12fff1e 	bx	lr
+
+000000e4 <__nesc_atomic_end>:
+
+inline void __nesc_atomic_end(__nesc_atomic_t oldState) @spontaneous() {
+  e4:	e12fff1e 	bx	lr
+
+000000e8 <fiqhandler>:
+    signal AT91Irq.fired[irqID]();   
+    
+    return;
+  }
+
+  void fiqhandler() __attribute__ ((interrupt ("FIQ"))) @C() @atomic_hwevent() {
+  e8:	e25ef004 	subs	pc, lr, #4
+
+Disassembly of section .text.startup:
+
+00000000 <main>:
+  
+  command void Scheduler.init()
+  {
+    atomic
+    {
+      memset( (void *)m_next, NO_TASK, sizeof(m_next) );
+   0:	e59f2180 	ldr	r2, [pc, #384]	; 188 <main+0x188>
+   4:	e3e03000 	mvn	r3, #0
+  uses interface Scheduler;
+  uses interface Init as PlatformInit;
+  uses interface Init as SoftwareInit;
+}
+implementation {
+  int main() @C() @spontaneous() {
+   8:	e92d4010 	push	{r4, lr}
+   c:	e5c23000 	strb	r3, [r2]
+      m_head = NO_TASK;
+  10:	e59f2174 	ldr	r2, [pc, #372]	; 18c <main+0x18c>
+  14:	e5c23000 	strb	r3, [r2]
+      m_tail = NO_TASK;
+  18:	e59f2170 	ldr	r2, [pc, #368]	; 190 <main+0x190>
+  1c:	e5c23000 	strb	r3, [r2]
+    AT91PS_PMC     pPMC = AT91C_BASE_PMC;
+
+    //* Set Flash Waite sate
+    //  Single Cycle Access at Up to 30 MHz, or 40
+    //  if MCK = 47923200 I have 72 Cycle for 1,5 usecond ( flied MC_FMR->FMCN
+    AT91C_BASE_MC->MC_FMR = ((AT91C_MC_FMCN)&(72 <<16)) | AT91C_MC_FWS_1FWS ;
+  20:	e59f216c 	ldr	r2, [pc, #364]	; 194 <main+0x194>
+  24:	e503209f 	str	r2, [r3, #-159]	; 0x9f
+
+    //* Watchdog Disable
+    AT91C_BASE_WDTC->WDTC_WDMR= AT91C_WDTC_WDDIS;
+  28:	e3a02902 	mov	r2, #32768	; 0x8000
+  2c:	e50322bb 	str	r2, [r3, #-699]	; 0x2bb
+
+    //* Set MCK at 47 923 200
+    // 1 Enabling the Main Oscillator:
+    // SCK = 1/32768 = 30.51 uSecond
+    // Start up time = 8 * 6 / SCK = 56 * 30.51 = 1,46484375 ms
+    pPMC->PMC_MOR = (( (AT91C_CKGR_OSCOUNT & (0x06 <<8)) | AT91C_CKGR_MOSCEN ));
+  30:	e59f2160 	ldr	r2, [pc, #352]	; 198 <main+0x198>
+  34:	e50323df 	str	r2, [r3, #-991]	; 0x3df
+
+    // Wait the startup time
+    while(!(pPMC->PMC_SR & AT91C_PMC_MOSCS));
+  38:	e5131397 	ldr	r1, [r3, #-919]	; 0x397
+  3c:	e3110001 	tst	r1, #1
+  40:	e3e02000 	mvn	r2, #0
+  44:	0afffffb 	beq	38 <main+0x38>
+    // - Mul 72+1: Fout = 96.1097 =(3,6864 *73)
+    // for 96 MHz the erroe is 0.11%
+    // Field out NOT USED = 0
+    // PLLCOUNT pll startup time estimate at : 0.844 ms
+    // PLLCOUNT 28 = 0.000844 /(1/32768)
+    pPMC->PMC_PLLR = ((AT91C_CKGR_DIV      &  14) |
+  48:	e59f314c 	ldr	r3, [pc, #332]	; 19c <main+0x19c>
+  4c:	e50233d3 	str	r3, [r2, #-979]	; 0x3d3
+                      (AT91C_CKGR_PLLCOUNT & (28<<8)) |
+                      (AT91C_CKGR_MUL      & (72<<16)));
+
+    // Wait the startup time
+    while(!(pPMC->PMC_SR & AT91C_PMC_LOCK));
+  50:	e5123397 	ldr	r3, [r2, #-919]	; 0x397
+  54:	e3130004 	tst	r3, #4
+  58:	0afffffc 	beq	50 <main+0x50>
+    while(!(pPMC->PMC_SR & AT91C_PMC_MCKRDY));
+  5c:	e3e01000 	mvn	r1, #0
+  60:	e5112397 	ldr	r2, [r1, #-919]	; 0x397
+  64:	e3120008 	tst	r2, #8
+  68:	e3e03000 	mvn	r3, #0
+  6c:	0afffffb 	beq	60 <main+0x60>
+
+    // 4. Selection of Master Clock and Processor Clock
+    // select the PLL clock divided by 2
+    pPMC->PMC_MCKR = AT91C_PMC_PRES_CLK_2 ;
+  70:	e3a02004 	mov	r2, #4
+  74:	e50323cf 	str	r2, [r3, #-975]	; 0x3cf
+    while(!(pPMC->PMC_SR & AT91C_PMC_MCKRDY));
+  78:	e1a01003 	mov	r1, r3
+  7c:	e5112397 	ldr	r2, [r1, #-919]	; 0x397
+  80:	e3120008 	tst	r2, #8
+  84:	e3e03000 	mvn	r3, #0
+  88:	0afffffb 	beq	7c <main+0x7c>
+
+    pPMC->PMC_MCKR |= AT91C_PMC_CSS_PLL_CLK  ;
+  8c:	e51323cf 	ldr	r2, [r3, #-975]	; 0x3cf
+  90:	e3822003 	orr	r2, r2, #3
+  94:	e50323cf 	str	r2, [r3, #-975]	; 0x3cf
+    while(!(pPMC->PMC_SR & AT91C_PMC_MCKRDY));
+  98:	e1a01003 	mov	r1, r3
+  9c:	e5112397 	ldr	r2, [r1, #-919]	; 0x397
+  a0:	e3120008 	tst	r2, #8
+  a4:	e3e03000 	mvn	r3, #0
+  a8:	0afffffb 	beq	9c <main+0x9c>
+    // See CStartup.S. Fast interrupt and interrupt are mapped to
+    //   fiqhandler and irqhandler in HplInteruptM.nc
+
+    // Enable the PIOA controller so the reading of AT91_PIOA_PDSR will
+    // work in the Led toggle call.
+    pPMC->PMC_PCER = (1<<AT91C_ID_PIOA);
+  ac:	e3a02004 	mov	r2, #4
+  b0:	e50323ef 	str	r2, [r3, #-1007]	; 0x3ef
+
+    //AT91C_BASE_AIC->AIC_SVR[0] = (int) AT91F_Default_FIQ_handler ;
+
+    //TODO
+    AT91C_BASE_AIC->AIC_SPU  = (int) AT91F_Spurious_handler ;
+  b4:	e59f20e4 	ldr	r2, [pc, #228]	; 1a0 <main+0x1a0>
+  b8:	e5032ecb 	str	r2, [r3, #-3787]	; 0xecb
+
+    *AT91C_RSTC_RMR  = 0xA5000401;
+  bc:	e59f20e0 	ldr	r2, [pc, #224]	; 1a4 <main+0x1a4>
+  c0:	e50322f7 	str	r2, [r3, #-759]	; 0x2f7
+    *AT91C_AIC_DCR   = 1;
+
+    // PIT timer is for 1 ms intervals
+    //*AT91C_PITC_PIMR = (0x000FFFFF | 0x01000000 ); /*original*/
+    *AT91C_PITC_PIMR = (MS_1_TIME | AT91C_PITC_PITEN | AT91C_PITC_PITIEN );
+  c4:	e59f20dc 	ldr	r2, [pc, #220]	; 1a8 <main+0x1a8>
+
+    //TODO
+    AT91C_BASE_AIC->AIC_SPU  = (int) AT91F_Spurious_handler ;
+
+    *AT91C_RSTC_RMR  = 0xA5000401;
+    *AT91C_AIC_DCR   = 1;
+  c8:	e3a00001 	mov	r0, #1
+  cc:	e5030ec7 	str	r0, [r3, #-3783]	; 0xec7
+
+    // PIT timer is for 1 ms intervals
+    //*AT91C_PITC_PIMR = (0x000FFFFF | 0x01000000 ); /*original*/
+    *AT91C_PITC_PIMR = (MS_1_TIME | AT91C_PITC_PITEN | AT91C_PITC_PITIEN );
+  d0:	e50322cf 	str	r2, [r3, #-719]	; 0x2cf
+    TmpReset         = *AT91C_PITC_PIVR;
+  d4:	e51322c7 	ldr	r2, [r3, #-711]	; 0x2c7
+    TmpReset         = TmpReset;/* Suppress warning*/
+
+    *AT91C_PMC_PCER  = (1L<<AT91C_ID_TWI);/* Enable TWI Clock        */
+  d8:	e3a02c02 	mov	r2, #512	; 0x200
+  dc:	e50323ef 	str	r2, [r3, #-1007]	; 0x3ef
+    // Testing
+		//AT91F_AIC_ConfigureIt( AT91C_BASE_AIC, AT91C_ID_SYS, AT91C_AIC_PRIOR_HIGHEST, AT91C_AIC_SRCTYPE_INT_HIGH_LEVEL, cCommUpdateInt);
+		//AT91F_AIC_ConfigureIt( AT91C_BASE_AIC, AT91C_ID_SYS, AT91C_AIC_PRIOR_HIGHEST, AT91C_AIC_SRCTYPE_INT_EDGE_TRIGGERED, cCommCtrl);
+		//AT91F_AIC_EnableIt(AT91C_BASE_AIC, AT91C_ID_SYS);
+
+    taskMiss = 0;
+  e0:	e59f10c4 	ldr	r1, [pc, #196]	; 1ac <main+0x1ac>
+  e4:	e3a02000 	mov	r2, #0
+
+    mask = 0x1 << irq_id ;
+    //* Disable the interrupt on the interrupt controller
+    pAic->AIC_IDCR = mask ;
+    //* Save the interrupt handler routine pointer and the interrupt priority
+    pAic->AIC_SVR[irq_id] = (unsigned int) newHandler ;
+  e8:	e59fc0c0 	ldr	ip, [pc, #192]	; 1b0 <main+0x1b0>
+  ec:	e5812000 	str	r2, [r1]
+	void (*newHandler) (void) ) // \arg address of the interrupt handler
+{
+	unsigned int oldHandler;
+    unsigned int mask ;
+
+    oldHandler = pAic->AIC_SVR[irq_id];
+  f0:	e5132f7b 	ldr	r2, [r3, #-3963]	; 0xf7b
+
+    mask = 0x1 << irq_id ;
+    //* Disable the interrupt on the interrupt controller
+    pAic->AIC_IDCR = mask ;
+  f4:	e3a02002 	mov	r2, #2
+  f8:	e5032edb 	str	r2, [r3, #-3803]	; 0xedb
+    //* Save the interrupt handler routine pointer and the interrupt priority
+    pAic->AIC_SVR[irq_id] = (unsigned int) newHandler ;
+  fc:	e503cf7b 	str	ip, [r3, #-3963]	; 0xf7b
+    //* Store the Source Mode Register
+    pAic->AIC_SMR[irq_id] = src_type | priority  ;
+ 100:	e3a0c007 	mov	ip, #7
+ 104:	e503cffb 	str	ip, [r3, #-4091]	; 0xffb
+  // Peripheral clock and AIC
+  void enable(uint8_t id)
+  {
+    atomic {
+      if (id < 34) {
+        AT91C_BASE_TC0->TC_IER = AT91C_TC_CPCS;        
+ 108:	e3a0e010 	mov	lr, #16
+ 10c:	e3e0ca5f 	mvn	ip, #389120	; 0x5f000
+    //* Clear the interrupt on the interrupt controller
+    pAic->AIC_ICCR = mask ;
+ 110:	e5032ed7 	str	r2, [r3, #-3799]	; 0xed7
+ 114:	e50cefdb 	str	lr, [ip, #-4059]	; 0xfdb
+//*----------------------------------------------------------------------------
+__inline void AT91F_PMC_EnablePeriphClock (
+	AT91PS_PMC pPMC, // \arg pointer to PMC controller
+	unsigned int periphIds)  // \arg IDs of peripherals to enable
+{
+	pPMC->PMC_PCER = periphIds;
+ 118:	e50303ef 	str	r0, [r3, #-1007]	; 0x3ef
+__inline void AT91F_AIC_EnableIt (
+	AT91PS_AIC pAic,      // \arg pointer to the AIC registers
+	unsigned int irq_id ) // \arg interrupt number to initialize
+{
+    //* Enable the interrupt on the interrupt controller
+    pAic->AIC_IECR = 0x1 << irq_id ;
+ 11c:	e5032edf 	str	r2, [r3, #-3807]	; 0xedf
+
+  task void fireFromTask(){
+    // Fire the sync event
+    atomic {
+      signal HplAT91Pit.firedTask(taskMiss);
+      taskMiss = 0;
+ 120:	e1a04001 	mov	r4, r1
+  command bool Scheduler.runNextTask()
+  {
+    uint8_t nextTask;
+    atomic
+    {
+      nextTask = popTask();
+ 124:	ebfffffe 	bl	0 <main>
+      if( nextTask == NO_TASK )
+ 128:	e35000ff 	cmp	r0, #255	; 0xff
+ 12c:	0a000002 	beq	13c <main+0x13c>
+   * Event from the scheduler to run this task. Following the TinyOS
+   * concurrency model, the codes invoked from <tt>run()</tt> signals
+   * execute atomically with respect to one another, but can be
+   * preempted by async commands/events.
+   */
+  event void runTask();
+ 130:	e3500000 	cmp	r0, #0
+ 134:	05840000 	streq	r0, [r4]
+ 138:	eafffff9 	b	124 <main+0x124>
+ 13c:	e59f4068 	ldr	r4, [pc, #104]	; 1ac <main+0x1ac>
+  command bool Scheduler.runNextTask()
+  {
+    uint8_t nextTask;
+    atomic
+    {
+      nextTask = popTask();
+ 140:	ebfffffe 	bl	0 <main>
+      if( nextTask == NO_TASK )
+ 144:	e35000ff 	cmp	r0, #255	; 0xff
+ 148:	0a000008 	beq	170 <main+0x170>
+ 14c:	e3500000 	cmp	r0, #0
+ 150:	05840000 	streq	r0, [r4]
+ 154:	eafffff9 	b	140 <main+0x140>
+    {
+      uint8_t nextTask;
+
+      atomic
+      {
+	while ((nextTask = popTask()) == NO_TASK)
+ 158:	ebfffffe 	bl	0 <main>
+ 15c:	e35000ff 	cmp	r0, #255	; 0xff
+ 160:	0afffffc 	beq	158 <main+0x158>
+ 164:	e3500000 	cmp	r0, #0
+ 168:	05840000 	streq	r0, [r4]
+ 16c:	eafffff9 	b	158 <main+0x158>
+extern void AT91F_Default_FIQ_handler(void);
+
+inline void __nesc_enable_interrupt() {
+  uint32_t statusReg = 0;
+
+  asm volatile (
+ 170:	e3a03000 	mov	r3, #0
+ 174:	e10f3000 	mrs	r3, CPSR
+ 178:	e3c330c0 	bic	r3, r3, #192	; 0xc0
+ 17c:	e121f003 	msr	CPSR_c, r3
+ 180:	e59f4024 	ldr	r4, [pc, #36]	; 1ac <main+0x1ac>
+ 184:	eafffff3 	b	158 <main+0x158>
+	...
+ 194:	00480100 	.word	0x00480100
+ 198:	00000601 	.word	0x00000601
+ 19c:	00481c0e 	.word	0x00481c0e
+ 1a0:	00000000 	.word	0x00000000
+ 1a4:	a5000401 	.word	0xa5000401
+ 1a8:	03000bbb 	.word	0x03000bbb
+	...
